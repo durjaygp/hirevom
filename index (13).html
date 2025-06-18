@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hirevom - Professional Resume Writing Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-blue': '#1D4ED8',
+                        'brand-blue-light': '#3B82F6',
+                        'section-bg': '#F8FAFC'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .blog-category-btn {
+            @apply px-4 py-2 rounded-full border border-gray-300 text-slate-600 hover:border-brand-blue hover:text-brand-blue transition-colors font-medium;
+        }
+        .blog-category-btn.active {
+            @apply bg-brand-blue text-white border-brand-blue;
+        }
+        .blog-post {
+            transition: transform 0.2s ease;
+        }
+        .blog-post:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-700">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <h1 class="text-2xl font-bold text-brand-blue">Hirevom</h1>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-slate-600 hover:text-brand-blue transition-colors">Home</a>
+                    <a href="#services" class="text-slate-600 hover:text-brand-blue transition-colors">Services</a>
+                    <a href="#how-it-works" class="text-slate-600 hover:text-brand-blue transition-colors">How It Works</a>
+                    <a href="#faq" class="text-slate-600 hover:text-brand-blue transition-colors">FAQ</a>
+                    <a href="#contact" class="text-slate-600 hover:text-brand-blue transition-colors">Contact</a>
+                </div>
+                <button class="md:hidden" onclick="toggleMobileMenu()">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <div class="flex flex-col space-y-2">
+                    <a href="#home" class="text-slate-600 hover:text-brand-blue transition-colors py-2">Home</a>
+                    <a href="#services" class="text-slate-600 hover:text-brand-blue transition-colors py-2">Services</a>
+                    <a href="#how-it-works" class="text-slate-600 hover:text-brand-blue transition-colors py-2">How It Works</a>
+                    <a href="#faq" class="text-slate-600 hover:text-brand-blue transition-colors py-2">FAQ</a>
+                    <a href="#contact" class="text-slate-600 hover:text-brand-blue transition-colors py-2">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="bg-white py-16 lg:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div class="space-y-4">
+                        <h1 class="text-4xl lg:text-6xl font-bold text-slate-900 leading-tight">
+                            Craft a Winning Resume That Gets You <span class="text-brand-blue">Hired</span>
+                        </h1>
+                        <p class="text-xl text-slate-600 leading-relaxed">
+                            AI-powered and expert-written resumes for India and Gulf countries
+                        </p>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button class="bg-brand-blue hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors shadow-lg hover:shadow-xl">
+                            Order Resume
+                        </button>
+                        <button class="border-2 border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
+                            View Pricing
+                        </button>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img src="https://placehold.co/600x500" alt="Professional job applicant" class="w-full h-auto rounded-lg shadow-lg">
+                    <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-lg shadow-lg border">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                                <i data-lucide="check" class="w-6 h-6 text-green-600"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-slate-900">Resume Ready!</p>
+                                <p class="text-sm text-slate-600">Interview calls incoming</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Country Selector / Currency Notice -->
+    <section class="bg-brand-blue py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="flex items-center text-white mb-2 md:mb-0">
+                    <i data-lucide="globe" class="w-5 h-5 mr-3"></i>
+                    <span class="font-medium">We detect your location and show pricing/payment options accordingly. You can switch manually if needed.</span>
+                </div>
+                <div class="flex bg-white/20 rounded-lg p-1">
+                    <button class="px-4 py-2 rounded-md bg-white text-brand-blue font-semibold text-sm transition-colors" onclick="switchCurrency('INR')">
+                        🇮🇳 India (INR)
+                    </button>
+                    <button class="px-4 py-2 rounded-md text-white hover:bg-white/20 font-semibold text-sm transition-colors" onclick="switchCurrency('OMR')">
+                        🇴🇲 Oman (OMR)
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="bg-section-bg py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Why Choose Hirevom?</h2>
+                <p class="text-xl text-slate-600">We combine cutting-edge AI with human expertise for perfect results</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow text-center group">
+                    <div class="w-16 h-16 bg-brand-blue/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-brand-blue/20 transition-colors">
+                        <i data-lucide="brain" class="w-8 h-8 text-brand-blue"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-900 mb-2">AI + Expert Writers</h3>
+                    <p class="text-slate-600">Advanced AI technology combined with professional human expertise</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow text-center group">
+                    <div class="w-16 h-16 bg-brand-blue/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-brand-blue/20 transition-colors">
+                        <i data-lucide="zap" class="w-8 h-8 text-brand-blue"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-900 mb-2">Fast Turnaround</h3>
+                    <p class="text-slate-600">Quick delivery in both Word & PDF formats within 24-48 hours</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow text-center group">
+                    <div class="w-16 h-16 bg-brand-blue/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-brand-blue/20 transition-colors">
+                        <i data-lucide="target" class="w-8 h-8 text-brand-blue"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-900 mb-2">Tailored to Local Job Markets</h3>
+                    <p class="text-slate-600">Customized for India and Gulf country job market requirements</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow text-center group">
+                    <div class="w-16 h-16 bg-brand-blue/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-brand-blue/20 transition-colors">
+                        <i data-lucide="shield-check" class="w-8 h-8 text-brand-blue"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-900 mb-2">100% Confidential & Secure</h3>
+                    <p class="text-slate-600">Your personal information is completely secure and confidential</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="bg-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">How It Works</h2>
+                <p class="text-xl text-slate-600">Simple 4-step process to get your professional resume</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center relative">
+                    <div class="relative mb-6">
+                        <div class="w-20 h-20 bg-brand-blue rounded-full flex items-center justify-center mx-auto shadow-lg">
+                            <i data-lucide="file-text" class="w-10 h-10 text-white"></i>
+                        </div>
+                        <div class="absolute -top-2 -right-2 w-8 h-8 bg-brand-blue-light rounded-full flex items-center justify-center text-white font-bold text-sm shadow-md">1</div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-900 mb-2">Submit Details</h3>
+                    <p class="text-slate-600">Fill out our comprehensive form with your career information and goals</p>
+                    <!-- Connection line for desktop -->
+                    <div class="hidden lg:block absolute top-10 left-full w-full h-0.5 bg-gradient-to-r from-brand-blue to-transparent -translate-x-10"></div>
+                </div>
+                <div class="text-center relative">
+                    <div class="relative mb-6">
+                        <div class="w-20 h-20 bg-brand-blue rounded-full flex items-center justify-center mx-auto shadow-lg">
+                            <i data-lucide="cpu" class="w-10 h-10 text-white"></i>
+                        </div>
+                        <div class="absolute -top-2 -right-2 w-8 h-8 bg-brand-blue-light rounded-full flex items-center justify-center text-white font-bold text-sm shadow-md">2</div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-900 mb-2">Resume Creation</h3>
+                    <p class="text-slate-600">Our AI creates the initial draft, then expert writers refine and perfect it</p>
+                    <!-- Connection line for desktop -->
+                    <div class="hidden lg:block absolute top-10 left-full w-full h-0.5 bg-gradient-to-r from-brand-blue to-transparent -translate-x-10"></div>
+                </div>
+                <div class="text-center relative">
+                    <div class="relative mb-6">
+                        <div class="w-20 h-20 bg-brand-blue rounded-full flex items-center justify-center mx-auto shadow-lg">
+                            <i data-lucide="eye" class="w-10 h-10 text-white"></i>
+                        </div>
+                        <div class="absolute -top-2 -right-2 w-8 h-8 bg-brand-blue-light rounded-full flex items-center justify-center text-white font-bold text-sm shadow-md">3</div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-900 mb-2">Review</h3>
+                    <p class="text-slate-600">Review your resume draft and request any changes or revisions needed</p>
+                    <!-- Connection line for desktop -->
+                    <div class="hidden lg:block absolute top-10 left-full w-full h-0.5 bg-gradient-to-r from-brand-blue to-transparent -translate-x-10"></div>
+                </div>
+                <div class="text-center">
+                    <div class="relative mb-6">
+                        <div class="w-20 h-20 bg-brand-blue rounded-full flex items-center justify-center mx-auto shadow-lg">
+                            <i data-lucide="mail" class="w-10 h-10 text-white"></i>
+                        </div>
+                        <div class="absolute -top-2 -right-2 w-8 h-8 bg-brand-blue-light rounded-full flex items-center justify-center text-white font-bold text-sm shadow-md">4</div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-900 mb-2">Delivery via Email</h3>
+                    <p class="text-slate-600">Receive your final resume in Word & PDF formats directly in your inbox</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Services / Packages -->
+    <section id="services" class="bg-section-bg py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Resume Services</h2>
+                <p class="text-xl text-slate-600">Choose the perfect package for your career level</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Entry-Level Resume</h3>
+                        <div class="text-3xl font-bold text-brand-blue mb-1" data-inr="₹2,999" data-omr="OMR 15">₹2,999</div>
+                        <div class="text-sm text-slate-500">Perfect for fresh graduates</div>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <i data-lucide="check" class="w-5 h-5 text-green-500 mr-3 flex-shrink-0"></i>
+                            <span class="text-slate-600">Professional formatting</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="check" class="w-5 h-5 text-green-500 mr-3 flex-shrink-0"></i>
+                            <span class="text-slate-600">ATS-optimized keywords</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="check" class="w-5 h-5 text-green-500 mr-3 flex-shrink-0"></i>
+                            <span class="text-slate-600">Word & PDF formats</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="check" class="w-5 h-5 text-green-500 mr-3 flex-shrink-0"></i>
+                            <span class="text-slate-600">1 revision included</span>
+                        </li>
+                    </ul>
+                    <button class="w-full bg-brand-blue hover:bg-blue-700 text-white py-3 rounded-lg font-semibold transition-colors">
+                        Order Now
+                    </button>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-2 border-brand-blue relative">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <span class="bg-brand-blue text-white px-4 py-1 rounded-full text-sm font-semibold">Most Popular</span>
+                    </div>
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Professional Resume</h3>
+                        <div class="text-3xl font-bold text-brand-blue mb-1" data-inr="₹4,999" data-omr="OMR 25">₹4,999</div>
+                        <div class="text-sm text-slate-500">For experienced professionals</div>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <i data-lucide="check" class="w-5 h-5 text-green-500 mr-3 flex-shrink-0"></i>
+                            <span class="text-slate-600">Everything in Entry-Level</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="check" class="w-5 h-5 text-green-500 mr-3 flex-shrink-0"></i>
+                            <span class="text-slate-600">LinkedIn optimization tips</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="check" class="w-5 h-5 text-green-500 mr-3 flex-shrink-0"></i>
+                            <span class="text-slate-600">Industry-specific keywords</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="check" class="w-5 h-5 text-green-500 mr-3 flex-shrink-0"></i>
+                            <span class="text-slate-600">2 revisions included</span>
+                        </li>
+                    </ul>
+                    <button class="w-full bg-brand-blue hover:bg-blue-700 text-white py-3 rounded-lg font-semibold transition-colors">
+                        Order Now
+                    </button>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Executive Resume</h3>
+                        <div class="text-3xl font-bold text-brand-blue mb-1" data-inr="₹7,999" data-omr="OMR 40">₹7,999</div>
+                        <div class="text-sm text-slate-500">For senior executives</div>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <i data-lucide="check" class="w-5 h-5 text-green-500 mr-3 flex-shrink-0"></i>
+                            <span class="text-slate-600">Everything in Professional</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="check" class="w-5 h-5 text-green-500 mr-3 flex-shrink-0"></i>
+                            <span class="text-slate-600">Executive summary</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="check" class="w-5 h-5 text-green-500 mr-3 flex-shrink-0"></i>
+                            <span class="text-slate-600">Achievement quantification</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="check" class="w-5 h-5 text-green-500 mr-3 flex-shrink-0"></i>
+                            <span class="text-slate-600">3 revisions included</span>
+                        </li>
+                    </ul>
+                    <button class="w-full bg-brand-blue hover:bg-blue-700 text-white py-3 rounded-lg font-semibold transition-colors">
+                        Order Now
+                    </button>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Add-on Services</h3>
+                        <div class="text-lg font-semibold text-brand-blue mb-1">Starting from</div>
+                        <div class="text-2xl font-bold text-brand-blue" data-inr="₹1,999" data-omr="OMR 10">₹1,999</div>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <i data-lucide="plus" class="w-5 h-5 text-brand-blue mr-3 flex-shrink-0"></i>
+                            <span class="text-slate-600">Cover Letter</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="plus" class="w-5 h-5 text-brand-blue mr-3 flex-shrink-0"></i>
+                            <span class="text-slate-600">LinkedIn Profile</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="plus" class="w-5 h-5 text-brand-blue mr-3 flex-shrink-0"></i>
+                            <span class="text-slate-600">Thank You Letter</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="plus" class="w-5 h-5 text-brand-blue mr-3 flex-shrink-0"></i>
+                            <span class="text-slate-600">Interview Prep Guide</span>
+                        </li>
+                    </ul>
+                    <button class="w-full border-2 border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white py-3 rounded-lg font-semibold transition-colors">
+                        View Add-ons
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="bg-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">What Our Clients Say</h2>
+                <p class="text-xl text-slate-600">Success stories from across India and Gulf countries</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-section-bg p-8 rounded-xl hover:shadow-lg transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 mb-6 italic">"Hirevom completely transformed my resume! The AI + human combination created something I never could have written myself. Got 4 interview calls in the first week!"</p>
+                    <div class="flex items-center">
+                        <img src="https://placehold.co/50x50" alt="Priya Sharma" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold text-slate-900">Priya Sharma</h4>
+                            <p class="text-sm text-slate-500">Software Engineer, Bangalore, India</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-section-bg p-8 rounded-xl hover:shadow-lg transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 mb-6 italic">"The team understood the Gulf job market perfectly. My resume now highlights exactly what employers in Oman are looking for. Landed my dream job within a month!"</p>
+                    <div class="flex items-center">
+                        <img src="https://placehold.co/50x50" alt="Ahmed Al-Rashid" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold text-slate-900">Ahmed Al-Rashid</h4>
+                            <p class="text-sm text-slate-500">Project Manager, Muscat, Oman</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-section-bg p-8 rounded-xl hover:shadow-lg transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 mb-6 italic">"Professional, fast, and incredibly effective. The AI technology combined with expert writers created a resume that perfectly represents my 10+ years of experience."</p>
+                    <div class="flex items-center">
+                        <img src="https://placehold.co/50x50" alt="Rajesh Kumar" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold text-slate-900">Rajesh Kumar</h4>
+                            <p class="text-sm text-slate-500">Marketing Director, Mumbai, India</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog/Resources Section -->
+    <section class="bg-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Career Resources & Insights</h2>
+                <p class="text-xl text-slate-600">Expert tips and guides to accelerate your job search success</p>
+            </div>
+            
+            <!-- Featured Article -->
+            <div class="mb-12">
+                <div class="bg-gradient-to-r from-brand-blue to-brand-blue-light rounded-2xl p-8 text-white">
+                    <div class="grid lg:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <div class="inline-block bg-white/20 text-white px-3 py-1 rounded-full text-sm font-semibold mb-4">
+                                Featured Guide
+                            </div>
+                            <h3 class="text-2xl lg:text-3xl font-bold mb-4">The Ultimate Resume Guide for 2024</h3>
+                            <p class="text-blue-100 mb-6 text-lg">Complete step-by-step guide covering everything from ATS optimization to industry-specific keywords for India and Gulf job markets.</p>
+                            <button class="bg-white text-brand-blue hover:bg-gray-100 px-6 py-3 rounded-lg font-semibold transition-colors">
+                                Read Full Guide
+                            </button>
+                        </div>
+                        <div class="relative">
+                            <img src="https://placehold.co/400x300" alt="Resume Guide" class="w-full h-auto rounded-lg shadow-lg">
+                            <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
+                                <span class="text-brand-blue font-semibold text-sm">15 min read</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog Categories -->
+            <div class="mb-8">
+                <div class="flex flex-wrap justify-center gap-4">
+                    <button class="blog-category-btn active" onclick="filterBlogPosts('all')">All Articles</button>
+                    <button class="blog-category-btn" onclick="filterBlogPosts('resume-tips')">Resume Tips</button>
+                    <button class="blog-category-btn" onclick="filterBlogPosts('interview-prep')">Interview Prep</button>
+                    <button class="blog-category-btn" onclick="filterBlogPosts('career-advice')">Career Advice</button>
+                    <button class="blog-category-btn" onclick="filterBlogPosts('job-search')">Job Search</button>
+                    <button class="blog-category-btn" onclick="filterBlogPosts('industry-insights')">Industry Insights</button>
+                </div>
+            </div>
+
+            <!-- Blog Posts Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="blog-posts-grid">
+                <!-- Resume Tips Articles -->
+                <article class="blog-post bg-section-bg rounded-xl overflow-hidden hover:shadow-lg transition-shadow" data-category="resume-tips">
+                    <img src="https://placehold.co/350x200" alt="ATS Resume Tips" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="bg-blue-100 text-brand-blue px-3 py-1 rounded-full text-sm font-semibold">Resume Tips</span>
+                            <span class="text-slate-500 text-sm ml-3">5 min read</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 hover:text-brand-blue transition-colors cursor-pointer">
+                            10 ATS-Friendly Resume Tips That Actually Work in 2024
+                        </h3>
+                        <p class="text-slate-600 mb-4">Learn how to optimize your resume for Applicant Tracking Systems used by companies in India and Gulf countries.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <img src="https://placehold.co/32x32" alt="Author" class="w-8 h-8 rounded-full mr-3">
+                                <span class="text-sm text-slate-600">Sarah Johnson</span>
+                            </div>
+                            <span class="text-sm text-slate-500">Dec 15, 2024</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-post bg-section-bg rounded-xl overflow-hidden hover:shadow-lg transition-shadow" data-category="resume-tips">
+                    <img src="https://placehold.co/350x200" alt="Resume Keywords" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="bg-blue-100 text-brand-blue px-3 py-1 rounded-full text-sm font-semibold">Resume Tips</span>
+                            <span class="text-slate-500 text-sm ml-3">7 min read</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 hover:text-brand-blue transition-colors cursor-pointer">
+                            How to Use Keywords Effectively in Your Resume
+                        </h3>
+                        <p class="text-slate-600 mb-4">Master the art of keyword optimization to get past ATS systems and catch recruiters' attention.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <img src="https://placehold.co/32x32" alt="Author" class="w-8 h-8 rounded-full mr-3">
+                                <span class="text-sm text-slate-600">Raj Patel</span>
+                            </div>
+                            <span class="text-sm text-slate-500">Dec 12, 2024</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Interview Prep Articles -->
+                <article class="blog-post bg-section-bg rounded-xl overflow-hidden hover:shadow-lg transition-shadow" data-category="interview-prep">
+                    <img src="https://placehold.co/350x200" alt="Interview Questions" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-semibold">Interview Prep</span>
+                            <span class="text-slate-500 text-sm ml-3">10 min read</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 hover:text-brand-blue transition-colors cursor-pointer">
+                            50 Most Common Interview Questions & How to Answer Them
+                        </h3>
+                        <p class="text-slate-600 mb-4">Comprehensive guide to the most frequently asked interview questions with sample answers and tips.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <img src="https://placehold.co/32x32" alt="Author" class="w-8 h-8 rounded-full mr-3">
+                                <span class="text-sm text-slate-600">Ahmed Al-Zahra</span>
+                            </div>
+                            <span class="text-sm text-slate-500">Dec 10, 2024</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Career Advice Articles -->
+                <article class="blog-post bg-section-bg rounded-xl overflow-hidden hover:shadow-lg transition-shadow" data-category="career-advice">
+                    <img src="https://placehold.co/350x200" alt="Career Change" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm font-semibold">Career Advice</span>
+                            <span class="text-slate-500 text-sm ml-3">8 min read</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 hover:text-brand-blue transition-colors cursor-pointer">
+                            How to Successfully Change Careers in Your 30s
+                        </h3>
+                        <p class="text-slate-600 mb-4">Strategic guide for professionals looking to pivot their careers and transition to new industries.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <img src="https://placehold.co/32x32" alt="Author" class="w-8 h-8 rounded-full mr-3">
+                                <span class="text-sm text-slate-600">Priya Sharma</span>
+                            </div>
+                            <span class="text-sm text-slate-500">Dec 8, 2024</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Job Search Articles -->
+                <article class="blog-post bg-section-bg rounded-xl overflow-hidden hover:shadow-lg transition-shadow" data-category="job-search">
+                    <img src="https://placehold.co/350x200" alt="LinkedIn Profile" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-sm font-semibold">Job Search</span>
+                            <span class="text-slate-500 text-sm ml-3">6 min read</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 hover:text-brand-blue transition-colors cursor-pointer">
+                            LinkedIn Profile Optimization: Complete 2024 Guide
+                        </h3>
+                        <p class="text-slate-600 mb-4">Transform your LinkedIn profile into a powerful job search tool that attracts recruiters and opportunities.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <img src="https://placehold.co/32x32" alt="Author" class="w-8 h-8 rounded-full mr-3">
+                                <span class="text-sm text-slate-600">Michael Chen</span>
+                            </div>
+                            <span class="text-sm text-slate-500">Dec 5, 2024</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Industry Insights Articles -->
+                <article class="blog-post bg-section-bg rounded-xl overflow-hidden hover:shadow-lg transition-shadow" data-category="industry-insights">
+                    <img src="https://placehold.co/350x200" alt="Gulf Job Market" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-semibold">Industry Insights</span>
+                            <span class="text-slate-500 text-sm ml-3">12 min read</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 hover:text-brand-blue transition-colors cursor-pointer">
+                            Gulf Job Market Trends: What's Hot in 2024
+                        </h3>
+                        <p class="text-slate-600 mb-4">Comprehensive analysis of job market trends, salary expectations, and in-demand skills in Gulf countries.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <img src="https://placehold.co/30x30" alt="Author" class="w-8 h-8 rounded-full mr-3">
+                                <span class="text-sm text-slate-600">Fatima Al-Rashid</span>
+                            </div>
+                            <span class="text-sm text-slate-500">Dec 3, 2024</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="text-center mt-12">
+                <button class="border-2 border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+                    Load More Articles
+                </button>
+            </div>
+
+            <!-- Newsletter Signup -->
+            <div class="mt-16 bg-gradient-to-r from-slate-50 to-blue-50 rounded-2xl p-8">
+                <div class="text-center max-w-2xl mx-auto">
+                    <div class="w-16 h-16 bg-brand-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="mail" class="w-8 h-8 text-brand-blue"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Stay Updated with Career Tips</h3>
+                    <p class="text-slate-600 mb-6">Get weekly career insights, resume tips, and job market updates delivered to your inbox.</p>
+                    <div class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                        <input type="email" placeholder="Enter your email address" class="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent">
+                        <button class="bg-brand-blue hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors whitespace-nowrap">
+                            Subscribe Now
+                        </button>
+                    </div>
+                    <p class="text-sm text-slate-500 mt-3">No spam. Unsubscribe anytime.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="bg-section-bg py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+                <p class="text-xl text-slate-600">Everything you need to know about our services</p>
+            </div>
+            <div class="space-y-4">
+                <div class="bg-white rounded-lg shadow-sm">
+                    <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors" onclick="toggleFAQ(this)">
+                        <span class="font-semibold text-slate-900">How long does it take to get my resume?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transform transition-transform"></i>
+                    </button>
+                    <div class="px-6 pb-4 hidden">
+                        <p class="text-slate-600">We typically deliver your completed resume within 24-48 hours. For urgent requests, we offer express delivery within 12 hours for an additional fee.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-sm">
+                    <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors" onclick="toggleFAQ(this)">
+                        <span class="font-semibold text-slate-900">Can I get revisions if I'm not satisfied?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transform transition-transform"></i>
+                    </button>
+                    <div class="px-6 pb-4 hidden">
+                        <p class="text-slate-600">Yes! We offer free revisions based on your package: Entry-Level (1 revision), Professional (2 revisions), Executive (3 revisions). We want you to be completely satisfied with your resume.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-sm">
+                    <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors" onclick="toggleFAQ(this)">
+                        <span class="font-semibold text-slate-900">What formats are delivered?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transform transition-transform"></i>
+                    </button>
+                    <div class="px-6 pb-4 hidden">
+                        <p class="text-slate-600">You'll receive your resume in both Microsoft Word (.docx) and PDF formats. The Word format allows for easy editing, while the PDF is perfect for submitting applications.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-sm">
+                    <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors" onclick="toggleFAQ(this)">
+                        <span class="font-semibold text-slate-900">How is AI used in my resume?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transform transition-transform"></i>
+                    </button>
+                    <div class="px-6 pb-4 hidden">
+                        <p class="text-slate-600">Our AI analyzes your information and creates an initial draft with optimized keywords, formatting, and content structure. Then our expert writers review, refine, and perfect it to ensure it meets industry standards and your specific needs.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-sm">
+                    <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors" onclick="toggleFAQ(this)">
+                        <span class="font-semibold text-slate-900">Do you offer refunds?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transform transition-transform"></i>
+                    </button>
+                    <div class="px-6 pb-4 hidden">
+                        <p class="text-slate-600">We offer a 100% satisfaction guarantee. If you're not completely satisfied with your resume after all included revisions, we'll provide a full refund within 7 days of delivery.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final Call-to-Action -->
+    <section class="bg-brand-blue py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">Ready to Land Your Dream Job?</h2>
+            <p class="text-xl text-blue-100 mb-8">Join thousands of successful professionals who transformed their careers with our AI-powered resumes</p>
+            <button class="bg-white text-brand-blue hover:bg-gray-100 px-12 py-4 rounded-lg font-bold text-xl transition-colors shadow-lg hover:shadow-xl">
+                Place My Order Now
+            </button>
+            <p class="text-blue-200 mt-4 text-sm">✓ 24-48 Hour Delivery ✓ 100% Satisfaction Guarantee ✓ Expert + AI Written</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-section-bg py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <h3 class="text-2xl font-bold text-brand-blue mb-4">Hirevom</h3>
+                    <p class="text-slate-600 mb-4">Professional resume writing services powered by AI and refined by experts. Helping job seekers in India and Gulf countries land their dream jobs with winning resumes.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-brand-blue rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-colors">
+                            <i data-lucide="message-circle" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-brand-blue rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-colors">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-brand-blue rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-colors">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-brand-blue rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-colors">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-slate-900 mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-slate-600 hover:text-brand-blue transition-colors">Home</a></li>
+                        <li><a href="#services" class="text-slate-600 hover:text-brand-blue transition-colors">Services</a></li>
+                        <li><a href="#how-it-works" class="text-slate-600 hover:text-brand-blue transition-colors">How It Works</a></li>
+                        <li><a href="#faq" class="text-slate-600 hover:text-brand-blue transition-colors">FAQ</a></li>
+                        <li><a href="#contact" class="text-slate-600 hover:text-brand-blue transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-slate-900 mb-4">Contact Info</h4>
+                    <ul class="space-y-2 text-slate-600">
+                        <li class="flex items-center">
+                            <i data-lucide="mail" class="w-4 h-4 mr-2"></i>
+                            <span>hello@hirevom.com</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="phone" class="w-4 h-4 mr-2"></i>
+                            <span>+91 98765 43210</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="map-pin" class="w-4 h-4 mr-2"></i>
+                            <span>India & Gulf Countries</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 mt-8 pt-8 text-center">
+                <p class="text-slate-500">&copy; 2024 Hirevom. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        // FAQ Toggle Function
+        function toggleFAQ(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('[data-lucide="chevron-down"]');
+            
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                content.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // Currency switcher
+        function switchCurrency(currency) {
+            const buttons = document.querySelectorAll('[onclick^="switchCurrency"]');
+            const priceElements = document.querySelectorAll('[data-inr][data-omr]');
+            
+            buttons.forEach(btn => {
+                if (btn.textContent.includes(currency)) {
+                    btn.className = 'px-4 py-2 rounded-md bg-white text-brand-blue font-semibold text-sm transition-colors';
+                } else {
+                    btn.className = 'px-4 py-2 rounded-md text-white hover:bg-white/20 font-semibold text-sm transition-colors';
+                }
+            });
+            
+            priceElements.forEach(element => {
+                if (currency === 'INR') {
+                    element.textContent = element.getAttribute('data-inr');
+                } else {
+                    element.textContent = element.getAttribute('data-omr');
+                }
+            });
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+        // Add scroll effect to navbar
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('shadow-md');
+            } else {
+                nav.classList.remove('shadow-md');
+            }
+        });
+
+        // Blog category filtering
+        function filterBlogPosts(category) {
+            const posts = document.querySelectorAll('.blog-post');
+            const buttons = document.querySelectorAll('.blog-category-btn');
+            
+            // Update active button
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Filter posts
+            posts.forEach(post => {
+                if (category === 'all' || post.dataset.category === category) {
+                    post.style.display = 'block';
+                    post.style.animation = 'fadeIn 0.5s ease';
+                } else {
+                    post.style.display = 'none';
+                }
+            });
+        }
+
+        // Add fade-in animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
