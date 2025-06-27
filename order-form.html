@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Your Professional Resume | Hirevom</title>
+    <meta name="description" content="Order your professional resume from Hirevom. Fill out our comprehensive form to get started with your AI-powered and expert-written resume.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-blue': '#1D4ED8',
+                        'brand-blue-light': '#3B82F6',
+                        'section-bg': '#F8FAFC'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .form-step {
+            display: none;
+        }
+        .form-step.active {
+            display: block;
+        }
+        .step-indicator {
+            @apply w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold transition-colors;
+        }
+        .step-indicator.completed {
+            @apply bg-green-500 text-white;
+        }
+        .step-indicator.active {
+            @apply bg-brand-blue text-white;
+        }
+        .step-indicator.pending {
+            @apply bg-gray-200 text-gray-600;
+        }
+        .addon-card {
+            @apply border-2 border-gray-200 rounded-lg p-4 cursor-pointer transition-all;
+        }
+        .addon-card.selected {
+            @apply border-brand-blue bg-blue-50;
+        }
+    </style>
+</head>
+<body class="bg-section-bg text-slate-700">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-2xl font-bold text-brand-blue">Hirevom</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <span class="text-slate-600">Need help?</span>
+                    <a href="tel:+919876543210" class="text-brand-blue font-semibold hover:text-blue-700 transition-colors">
+                        <i data-lucide="phone" class="w-4 h-4 inline mr-1"></i>
+                        +91 98765 43210
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Order Header -->
+    <section class="bg-white py-8 border-b border-gray-100">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <h1 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Order Your Professional Resume</h1>
+                <p class="text-xl text-slate-600">Complete the form below to get started with your AI-powered and expert-written resume</p>
+            </div>
+            
+            <!-- Progress Indicator -->
+            <div class="flex items-center justify-center space-x-4 mb-8">
+                <div class="flex items-center">
+                    <div class="step-indicator active" id="step-1-indicator">1</div>
+                    <span class="ml-2 text-sm font-medium text-slate-700">Package</span>
+                </div>
+                <div class="w-12 h-0.5 bg-gray-200"></div>
+                <div class="flex items-center">
+                    <div class="step-indicator pending" id="step-2-indicator">2</div>
+                    <span class="ml-2 text-sm font-medium text-slate-700">Personal Info</span>
+                </div>
+                <div class="w-12 h-0.5 bg-gray-200"></div>
+                <div class="flex items-center">
+                    <div class="step-indicator pending" id="step-3-indicator">3</div>
+                    <span class="ml-2 text-sm font-medium text-slate-700">Career Details</span>
+                </div>
+                <div class="w-12 h-0.5 bg-gray-200"></div>
+                <div class="flex items-center">
+                    <div class="step-indicator pending" id="step-4-indicator">4</div>
+                    <span class="ml-2 text-sm font-medium text-slate-700">Payment</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Form -->
+    <section class="py-8">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Main Form -->
+                <div class="lg:col-span-2">
+                    <form id="order-form" class="bg-white rounded-xl shadow-sm p-8">
+                        <!-- Step 1: Package Selection -->
+                        <div class="form-step active" id="step-1">
+                            <h2 class="text-2xl font-bold text-slate-900 mb-6">Select Your Package</h2>
+                            
+                            <div class="space-y-4 mb-6">
+                                <label class="block">
+                                    <input type="radio" name="package" value="entry-level" class="sr-only package-radio">
+                                    <div class="package-card border-2 border-gray-200 rounded-lg p-6 cursor-pointer transition-all hover:border-brand-blue">
+                                        <div class="flex items-center justify-between">
+                                            <div>
+                                                <h3 class="text-xl font-semibold text-slate-900">Entry-Level Resume</h3>
+                                                <p class="text-slate-600">Perfect for fresh graduates & early career</p>
+                                            </div>
+                                            <div class="text-right">
+                                                <div class="text-2xl font-bold text-brand-blue" data-inr="₹2,999" data-omr="OMR 15">₹2,999</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </label>
+                                
+                                <label class="block">
+                                    <input type="radio" name="package" value="professional" class="sr-only package-radio" checked>
+                                    <div class="package-card border-2 border-brand-blue bg-blue-50 rounded-lg p-6 cursor-pointer transition-all">
+                                        <div class="flex items-center justify-between">
+                                            <div>
+                                                <h3 class="text-xl font-semibold text-slate-900">Professional Resume</h3>
+                                                <p class="text-slate-600">For experienced professionals</p>
+                                                <span class="inline-block bg-brand-blue text-white px-2 py-1 rounded text-xs font-semibold mt-1">Most Popular</span>
+                                            </div>
+                                            <div class="text-right">
+                                                <div class="text-2xl font-bold text-brand-blue" data-inr="₹4,999" data-omr="OMR 25">₹4,999</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </label>
+                                
+                                <label class="block">
+                                    <input type="radio" name="package" value="executive" class="sr-only package-radio">
+                                    <div class="package-card border-2 border-gray-200 rounded-lg p-6 cursor-pointer transition-all hover:border-brand-blue">
+                                        <div class="flex items-center justify-between">
+                                            <div>
+                                                <h3 class="text-xl font-semibold text-slate-900">Executive Resume</h3>
+                                                <p class="text-slate-600">For senior executives & leaders</p>
+                                            </div>
+                                            <div class="text-right">
+                                                <div class="text-2xl font-bold text-brand-blue" data-inr="₹7,999" data-omr="OMR 40">₹7,999</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            
+                            <!-- Add-ons -->
+                            <div class="mb-6">
+                                <h3 class="text-lg font-semibold text-slate-900 mb-4">Add-on Services (Optional)</h3>
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <label class="block">
+                                        <input type="checkbox" name="addons" value="cover-letter" class="sr-only addon-checkbox">
+                                        <div class="addon-card">
+                                            <div class="flex items-center justify-between">
+                                                <div>
+                                                    <h4 class="font-semibold text-slate-900">Cover Letter</h4>
+                                                    <p class="text-sm text-slate-600">Professional cover letter</p>
+                                                </div>
+                                                <div class="text-brand-blue font-semibold" data-inr="₹1,999" data-omr="OMR 10">₹1,999</div>
+                                            </div>
+                                        </div>
+                                    </label>
+                                    
+                                    <label class="block">
+                                        <input type="checkbox" name="addons" value="linkedin" class="sr-only addon-checkbox">
+                                        <div class="addon-card">
+                                            <div class="flex items-center justify-between">
+                                                <div>
+                                                    <h4 class="font-semibold text-slate-900">LinkedIn Profile</h4>
+                                                    <p class="text-sm text-slate-600">Optimized LinkedIn profile</p>
+                                                </div>
+                                                <div class="text-brand-blue font-semibold" data-inr="₹2,499" data-omr="OMR 12">₹2,499</div>
+                                            </div>
+                                        </div>
+                                    </label>
+                                    
+                                    <label class="block">
+                                        <input type="checkbox" name="addons" value="thank-you" class="sr-only addon-checkbox">
+                                        <div class="addon-card">
+                                            <div class="flex items-center justify-between">
+                                                <div>
+                                                    <h4 class="font-semibold text-slate-900">Thank You Letter</h4>
+                                                    <p class="text-sm text-slate-600">Post-interview thank you</p>
+                                                </div>
+                                                <div class="text-brand-blue font-semibold" data-inr="₹999" data-omr="OMR 5">₹999</div>
+                                            </div>
+                                        </div>
+                                    </label>
+                                    
+                                    <label class="block">
+                                        <input type="checkbox" name="addons" value="interview-prep" class="sr-only addon-checkbox">
+                                        <div class="addon-card">
+                                            <div class="flex items-center justify-between">
+                                                <div>
+                                                    <h4 class="font-semibold text-slate-900">Interview Prep</h4>
+                                                    <p class="text-sm text-slate-600">Interview preparation guide</p>
+                                                </div>
+                                                <div class="text-brand-blue font-semibold" data-inr="₹1,499" data-omr="OMR 8">₹1,499</div>
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <button type="button" class="w-full bg-brand-blue hover:bg-blue-700 text-white py-3 rounded-lg font-semibold transition-colors" onclick="nextStep()">
+                                Continue to Personal Information
+                            </button>
+                        </div>
+
+                        <!-- Step 2: Personal Information -->
+                        <div class="form-step" id="step-2">
+                            <h2 class="text-2xl font-bold text-slate-900 mb-6">Personal Information</h2>
+                            
+                            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-700 mb-2">First Name *</label>
+                                    <input type="text" name="firstName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-700 mb-2">Last Name *</label>
+                                    <input type="text" name="lastName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent">
+                                </div>
+                            </div>
+                            
+                            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-700 mb-2">Email Address *</label>
+                                    <input type="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-700 mb-2">Phone Number *</label>
+                                    <input type="tel" name="phone" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent">
+                                </div>
+                            </div>
+                            
+                            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-700 mb-2">City *</label>
+                                    <input type="text" name="city" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-700 mb-2">Country *</label>
+                                    <select name="country" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent">
+                                        <option value="">Select Country</option>
+                                        <option value="india">India</option>
+                                        <option value="oman">Oman</option>
+                                        <option value="uae">United Arab Emirates</option>
+                                        <option value="saudi">Saudi Arabia</option>
+                                        <option value="qatar">Qatar</option>
+                                        <option value="kuwait">Kuwait</option>
+                                        <option value="bahrain">Bahrain</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label class="block text-sm font-medium text-slate-700 mb-2">LinkedIn Profile URL (Optional)</label>
+                                <input type="url" name="linkedin" placeholder="https://linkedin.com/in/yourprofile" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent">
+                            </div>
+                            
+                            <div class="flex space-x-4">
+                                <button type="button" class="flex-1 border-2 border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white py-3 rounded-lg font-semibold transition-colors" onclick="prevStep()">
+                                    Back
+                                </button>
+                                <button type="button" class="flex-1 bg-brand-blue hover:bg-blue-700 text-white py-3 rounded-lg font-semibold transition-colors" onclick="nextStep()">
+                                    Continue to Career Details
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Career Details -->
+                        <div class="form-step" id="step-3">
+                            <h2 class="text-2xl font-bold text-slate-900 mb-6">Career Details</h2>
+                            
+                            <div class="mb-6">
+                                <label class="block text-sm font-medium text-slate-700 mb-2">Current Job Title *</label>
+                                <input type="text" name="currentTitle" required placeholder="e.g., Software Engineer, Marketing Manager" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent">
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label class="block text-sm font-medium text-slate-700 mb-2">Industry *</label>
+                                <select name="industry" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent">
+                                    <option value="">Select Industry</option>
+                                    <option value="technology">Technology</option>
+                                    <option value="finance">Finance & Banking</option>
+                                    <option value="healthcare">Healthcare</option>
+                                    <option value="education">Education</option>
+                                    <option value="marketing">Marketing & Advertising</option>
+                                    <option value="sales">Sales</option>
+                                    <option value="hr">Human Resources</option>
+                                    <option value="engineering">Engineering</option>
+                                    <option value="consulting">Consulting</option>
+                                    <option value="retail">Retail</option>
+                                    <option value="manufacturing">Manufacturing</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label class="block text-sm font-medium text-slate-700 mb-2">Years of Experience *</label>
+                                <select name="experience" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent">
+                                    <option value="">Select Experience</option>
+                                    <option value="0-1">0-1 years (Fresh Graduate)</option>
+                                    <option value="2-3">2-3 years</option>
+                                    <option value="4-6">4-6 years</option>
+                                    <option value="7-10">7-10 years</option>
+                                    <option value="11-15">11-15 years</option>
+                                    <option value="15+">15+ years</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label class="block text-sm font-medium text-slate-700 mb-2">Target Job Title *</label>
+                                <input type="text" name="targetTitle" required placeholder="What position are you applying for?" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent">
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label class="block text-sm font-medium text-slate-700 mb-2">Key Skills (Separate with commas) *</label>
+                                <textarea name="skills" required rows="3" placeholder="e.g., JavaScript, Project Management, Data Analysis, Leadership" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent"></textarea>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label class="block text-sm font-medium text-slate-700 mb-2">Upload Current Resume (Optional)</label>
+                                <div class="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center">
+                                    <i data-lucide="upload" class="w-8 h-8 text-gray-400 mx-auto mb-2"></i>
+                                    <p class="text-slate-600 mb-2">Drag and drop your resume here, or click to browse</p>
+                                    <input type="file" name="currentResume" accept=".pdf,.doc,.docx" class="hidden" id="resume-upload">
+                                    <button type="button" class="text-brand-blue hover:text-blue-700 font-semibold" onclick="document.getElementById('resume-upload').click()">
+                        Choose File
+                    </button>
+                </div>
+            </div>
+            
+            <div class="mb-6">
+                <label class="block text-sm font-medium text-slate-700 mb-2">Additional Requirements or Special Instructions</label>
+                <textarea name="requirements" rows="4" placeholder="Any specific requirements, target companies, or special instructions for your resume..." class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent"></textarea>
+            </div>
+            
+            <div class="flex space-x-4">
+                <button type="button" class="flex-1 border-2 border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white py-3 rounded-lg font-semibold transition-colors" onclick="prevStep()">
+                    Back
+                </button>
+                <button type="button" class="flex-1 bg-brand-blue hover:bg-blue-700 text-white py-3 rounded-lg font-semibold transition-colors" onclick="nextStep()">
+                    Continue to Payment
+                </button>
+            </div>
+        </div>
+
+        <!-- Step 4: Payment -->
+        <div class="form-step" id="step-4">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6">Payment Information</h2>
+            
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+                <div class="flex items-center">
+                    <i data-lucide="shield-check" class="w-5 h-5 text-blue-600 mr-2"></i>
+                    <span class="text-blue-800 font-medium">Secure Payment - Your information is protected with 256-bit SSL encryption</span>
+                </div>
+            </div>
+            
+            <div class="mb-6">
+                <label class="block text-sm font-medium text-slate-700 mb-2">Payment Method</label>
+                <div class="space-y-3">
+                    <label class="flex items-center p-4 border border-gray-300 rounded-lg cursor-pointer hover:border-brand-blue transition-colors">
+                        <input type="radio" name="paymentMethod" value="card" class="mr-3" checked>
+                        <i data-lucide="credit-card" class="w-5 h-5 text-slate-600 mr-3"></i>
+                        <span class="font-medium">Credit/Debit Card</span>
+                    </label>
+                    <label class="flex items-center p-4 border border-gray-300 rounded-lg cursor-pointer hover:border-brand-blue transition-colors">
+                        <input type="radio" name="paymentMethod" value="upi" class="mr-3">
+                        <i data-lucide="smartphone" class="w-5 h-5 text-slate-600 mr-3"></i>
+                        <span class="font-medium">UPI Payment (India)</span>
+                    </label>
+                    <label class="flex items-center p-4 border border-gray-300 rounded-lg cursor-pointer hover:border-brand-blue transition-colors">
+                        <input type="radio" name="paymentMethod" value="bank" class="mr-3">
+                        <i data-lucide="building" class="w-5 h-5 text-slate-600 mr-3"></i>
+                        <span class="font-medium">Bank Transfer</span>
+                    </label>
+                </div>
+            </div>
+            
+            <div id="card-details" class="space-y-4 mb-6">
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-2">Card Number *</label>
+                    <input type="text" name="cardNumber" placeholder="1234 5678 9012 3456" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent">
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-2">Expiry Date *</label>
+                        <input type="text" name="expiryDate" placeholder="MM/YY" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-2">CVV *</label>
+                        <input type="text" name="cvv" placeholder="123" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-2">Cardholder Name *</label>
+                    <input type="text" name="cardholderName" placeholder="Name as on card" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent">
+                </div>
+            </div>
+            
+            <div class="mb-6">
+                <label class="flex items-center">
+                    <input type="checkbox" name="terms" required class="mr-3">
+                    <span class="text-sm text-slate-600">I agree to the <a href="#" class="text-brand-blue hover:text-blue-700">Terms of Service</a> and <a href="#" class="text-brand-blue hover:text-blue-700">Privacy Policy</a></span>
+                </label>
+            </div>
+            
+            <div class="flex space-x-4">
+                <button type="button" class="flex-1 border-2 border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white py-3 rounded-lg font-semibold transition-colors" onclick="prevStep()">
+                    Back
+                </button>
+                <button type="submit" class="flex-1 bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg font-semibold transition-colors">
+                    Complete Order
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<!-- Order Summary -->
+<div class="lg:col-span-1">
+    <div class="bg-white rounded-xl shadow-sm p-6 sticky top-8">
+        <h3 class="text-xl font-bold text-slate-900 mb-4">Order Summary</h3>
+        
+        <div class="space-y-3 mb-6">
+            <div class="flex justify-between items-center" id="package-summary">
+                <span class="text-slate-600">Professional Resume</span>
+                <span class="font-semibold" data-inr="₹4,999" data-omr="OMR 25">₹4,999</span>
+            </div>
+            <div id="addons-summary" class="space-y-2">
+                <!-- Add-ons will be populated here -->
+            </div>
+        </div>
+        
+        <div class="border-t border-gray-200 pt-4 mb-6">
+            <div class="flex justify-between items-center text-lg font-bold">
+                <span>Total</span>
+                <span id="total-amount" data-inr="₹4,999" data-omr="OMR 25">₹4,999</span>
+            </div>
+        </div>
+        
+        <div class="space-y-3 text-sm text-slate-600">
+            <div class="flex items-center">
+                <i data-lucide="clock" class="w-4 h-4 mr-2 text-green-600"></i>
+                <span>24-48 hour delivery</span>
+            </div>
+            <div class="flex items-center">
+                <i data-lucide="shield-check" class="w-4 h-4 mr-2 text-green-600"></i>
+                <span>100% satisfaction guarantee</span>
+            </div>
+            <div class="flex items-center">
+                <i data-lucide="refresh-cw" class="w-4 h-4 mr-2 text-green-600"></i>
+                <span>Free revisions included</span>
+            </div>
+            <div class="flex items-center">
+                <i data-lucide="file-text" class="w-4 h-4 mr-2 text-green-600"></i>
+                <span>Word & PDF formats</span>
+            </div>
+        </div>
+        
+        <div class="mt-6 p-4 bg-blue-50 rounded-lg">
+            <h4 class="font-semibold text-slate-900 mb-2">Need Help?</h4>
+            <p class="text-sm text-slate-600 mb-3">Our experts are here to assist you</p>
+            <div class="space-y-2 text-sm">
+                <div class="flex items-center">
+                    <i data-lucide="phone" class="w-4 h-4 mr-2 text-brand-blue"></i>
+                    <span>+91 98765 43210</span>
+                </div>
+                <div class="flex items-center">
+                    <i data-lucide="mail" class="w-4 h-4 mr-2 text-brand-blue"></i>
+                    <span>hello@hirevom.com</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-white py-8 border-t border-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p class="text-slate-500">&copy; 2024 Hirevom. All rights reserved. | <a href="#" class="text-brand-blue hover:text-blue-700">Privacy Policy</a> | <a href="#" class="text-brand-blue hover:text-blue-700">Terms of Service</a></p>
+    </div>
+</footer>
+
+<script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+
+    let currentStep = 1;
+    const totalSteps = 4;
+
+    // Package pricing data
+    const packagePrices = {
+        'entry-level': { inr: 2999, omr: 15, name: 'Entry-Level Resume' },
+        'professional': { inr: 4999, omr: 25, name: 'Professional Resume' },
+        'executive': { inr: 7999, omr: 40, name: 'Executive Resume' }
+    };
+
+    const addonPrices = {
+        'cover-letter': { inr: 1999, omr: 10, name: 'Cover Letter' },
+        'linkedin': { inr: 2499, omr: 12, name: 'LinkedIn Profile' },
+        'thank-you': { inr: 999, omr: 5, name: 'Thank You Letter' },
+        'interview-prep': { inr: 1499, omr: 8, name: 'Interview Prep Guide' }
+    };
+
+    let currentCurrency = 'INR';
+
+    // Initialize form
+    document.addEventListener('DOMContentLoaded', function() {
+        // Check if package was pre-selected
+        const selectedPackage = localStorage.getItem('selectedPackage');
+        if (selectedPackage && packagePrices[selectedPackage]) {
+            document.querySelector(`input[value="${selectedPackage}"]`).checked = true;
+            updatePackageSelection();
+        }
+        
+        updateOrderSummary();
+        setupEventListeners();
+    });
+
+    function setupEventListeners() {
+        // Package selection
+        document.querySelectorAll('.package-radio').forEach(radio => {
+            radio.addEventListener('change', updatePackageSelection);
+        });
+
+        // Addon selection
+        document.querySelectorAll('.addon-checkbox').forEach(checkbox => {
+            checkbox.addEventListener('change', updateAddonSelection);
+        });
+
+        // Form submission
+        document.getElementById('order-form').addEventListener('submit', handleFormSubmission);
+    }
+
+    function updatePackageSelection() {
+        const selectedPackage = document.querySelector('input[name="package"]:checked').value;
+        
+        // Update visual selection
+        document.querySelectorAll('.package-card').forEach(card => {
+            card.classList.remove('border-brand-blue', 'bg-blue-50');
+            card.classList.add('border-gray-200');
+        });
+        
+        const selectedCard = document.querySelector(`input[value="${selectedPackage}"]`).nextElementSibling;
+        selectedCard.classList.remove('border-gray-200');
+        selectedCard.classList.add('border-brand-blue', 'bg-blue-50');
+        
+        updateOrderSummary();
+    }
+
+    function updateAddonSelection() {
+        const checkbox = event.target;
+        const card = checkbox.nextElementSibling;
+        
+        if (checkbox.checked) {
+            card.classList.add('selected');
+        } else {
+            card.classList.remove('selected');
+        }
+        
+        updateOrderSummary();
+    }
+
+    function updateOrderSummary() {
+        const selectedPackage = document.querySelector('input[name="package"]:checked').value;
+        const selectedAddons = Array.from(document.querySelectorAll('input[name="addons"]:checked')).map(cb => cb.value);
+        
+        // Update package in summary
+        const packageInfo = packagePrices[selectedPackage];
+        document.getElementById('package-summary').innerHTML = `
+            <span class="text-slate-600">${packageInfo.name}</span>
+            <span class="font-semibold">${currentCurrency === 'INR' ? '₹' + packageInfo.inr : 'OMR ' + packageInfo.omr}</span>
+        `;
+        
+        // Update addons in summary
+        const addonsSummary = document.getElementById('addons-summary');
+        addonsSummary.innerHTML = '';
+        
+        let total = currentCurrency === 'INR' ? packageInfo.inr : packageInfo.omr;
+        
+        selectedAddons.forEach(addon => {
+            const addonInfo = addonPrices[addon];
+            const addonPrice = currentCurrency === 'INR' ? addonInfo.inr : addonInfo.omr;
+            total += addonPrice;
+            
+            addonsSummary.innerHTML += `
+                <div class="flex justify-between items-center text-sm">
+                    <span class="text-slate-600">${addonInfo.name}</span>
+                    <span class="font-semibold">${currentCurrency === 'INR' ? '₹' + addonPrice : 'OMR ' + addonPrice}</span>
+                </div>
+            `;
+        });
+        
+        // Update total
+        document.getElementById('total-amount').textContent = currentCurrency === 'INR' ? '₹' + total : 'OMR ' + total;
+    }
+
+    function nextStep() {
+        if (validateCurrentStep()) {
+            if (currentStep < totalSteps) {
+                // Hide current step
+                document.getElementById(`step-${currentStep}`).classList.remove('active');
+                document.getElementById(`step-${currentStep}-indicator`).classList.remove('active');
+                document.getElementById(`step-${currentStep}-indicator`).classList.add('completed');
+                
+                // Show next step
+                currentStep++;
+                document.getElementById(`step-${currentStep}`).classList.add('active');
+                document.getElementById(`step-${currentStep}-indicator`).classList.remove('pending');
+                document.getElementById(`step-${currentStep}-indicator`).classList.add('active');
+                
+                // Scroll to top
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+    }
+
+    function prevStep() {
+        if (currentStep > 1) {
+            // Hide current step
+            document.getElementById(`step-${currentStep}`).classList.remove('active');
+            document.getElementById(`step-${currentStep}-indicator`).classList.remove('active');
+            document.getElementById(`step-${currentStep}-indicator`).classList.add('pending');
+            
+            // Show previous step
+            currentStep--;
+            document.getElementById(`step-${currentStep}`).classList.add('active');
+            document.getElementById(`step-${currentStep}-indicator`).classList.remove('completed');
+            document.getElementById(`step-${currentStep}-indicator`).classList.add('active');
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    }
+
+    function validateCurrentStep() {
+        const currentStepElement = document.getElementById(`step-${currentStep}`);
+        const requiredFields = currentStepElement.querySelectorAll('[required]');
+        
+        for (let field of requiredFields) {
+            if (!field.value.trim()) {
+                field.focus();
+                field.classList.add('border-red-500');
+                setTimeout(() => field.classList.remove('border-red-500'), 3000);
+                return false;
+            }
+        }
+        
+        return true;
+    }
+
+    function handleFormSubmission(e) {
+        e.preventDefault();
+        
+        if (validateCurrentStep()) {
+            // Show loading state
+            const submitBtn = document.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Processing...';
+            submitBtn.disabled = true;
+            
+            // Simulate form submission
+            setTimeout(() => {
+                // Redirect to confirmation page
+                window.location.href = 'order-confirmation.html';
+            }, 2000);
+        }
+    }
+
+    // File upload handling
+    document.getElementById('resume-upload').addEventListener('change', function(e) {
+        const file = e.target.files[0];
+        if (file) {
+            const uploadArea = e.target.closest('.border-dashed');
+            uploadArea.innerHTML = `
+                <i data-lucide="check-circle" class="w-8 h-8 text-green-500 mx-auto mb-2"></i>
+                <p class="text-slate-600 mb-2">File uploaded: ${file.name}</p>
+                <button type="button" class="text-brand-blue hover:text-blue-700 font-semibold" onclick="document.getElementById('resume-upload').click()">
+                    Change File
+                </button>
+            `;
+            lucide.createIcons();
+        }
+    });
+</script>
+</body>
+</html>

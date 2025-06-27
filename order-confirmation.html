@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation - Thank You! | Hirevom</title>
+    <meta name="description" content="Thank you for your order! Your professional resume is being prepared by our expert writers. Check your order status and next steps.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-blue': '#1D4ED8',
+                        'brand-blue-light': '#3B82F6',
+                        'section-bg': '#F8FAFC'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .success-animation {
+            animation: successPulse 2s ease-in-out infinite;
+        }
+        @keyframes successPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+    </style>
+</head>
+<body class="bg-section-bg text-slate-700">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-2xl font-bold text-brand-blue">Hirevom</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <span class="text-slate-600">Need help?</span>
+                    <a href="tel:+919876543210" class="text-brand-blue font-semibold hover:text-blue-700 transition-colors">
+                        <i data-lucide="phone" class="w-4 h-4 inline mr-1"></i>
+                        +91 98765 43210
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Success Header -->
+    <section class="bg-white py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="success-animation w-24 h-24 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i data-lucide="check" class="w-12 h-12 text-green-600"></i>
+            </div>
+            <h1 class="text-4xl lg:text-5xl font-bold text-slate-900 mb-4">Order Confirmed!</h1>
+            <p class="text-xl text-slate-600 mb-8">Thank you for choosing Hirevom. Your professional resume is now being prepared by our expert writers.</p>
+            
+            <div class="bg-green-50 border border-green-200 rounded-lg p-6 mb-8">
+                <div class="flex items-center justify-center mb-4">
+                    <i data-lucide="mail" class="w-6 h-6 text-green-600 mr-3"></i>
+                    <span class="text-green-800 font-semibold">Confirmation email sent to your inbox</span>
+                </div>
+                <p class="text-green-700">Please check your email for order details and next steps. Don't forget to check your spam folder if you don't see it within a few minutes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Details -->
+    <section class="py-8">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- Order Summary -->
+                <div class="bg-white rounded-xl shadow-sm p-8">
+                    <h2 class="text-2xl font-bold text-slate-900 mb-6">Order Summary</h2>
+                    
+                    <div class="space-y-4 mb-6">
+                        <div class="flex items-center justify-between pb-3 border-b border-gray-100">
+                            <span class="text-slate-600">Order Number:</span>
+                            <span class="font-semibold text-brand-blue">#HV-2024-001234</span>
+                        </div>
+                        <div class="flex items-center justify-between pb-3 border-b border-gray-100">
+                            <span class="text-slate-600">Order Date:</span>
+                            <span class="font-semibold" id="order-date"></span>
+                        </div>
+                        <div class="flex items-center justify-between pb-3 border-b border-gray-100">
+                            <span class="text-slate-600">Package:</span>
+                            <span class="font-semibold">Professional Resume</span>
+                        </div>
+                        <div class="flex items-center justify-between pb-3 border-b border-gray-100">
+                            <span class="text-slate-600">Add-ons:</span>
+                            <span class="font-semibold">Cover Letter</span>
+                        </div>
+                        <div class="flex items-center justify-between pb-3 border-b border-gray-100">
+                            <span class="text-slate-600">Total Amount:</span>
+                            <span class="font-bold text-xl text-brand-blue">₹6,998</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-slate-600">Payment Status:</span>
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold bg-green-100 text-green-800">
+                                <i data-lucide="check-circle" class="w-4 h-4 mr-1"></i>
+                                Paid
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Next Steps -->
+                <div class="bg-white rounded-xl shadow-sm p-8">
+                    <h2 class="text-2xl font-bold text-slate-900 mb-6">What Happens Next?</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 bg-brand-blue rounded-full flex items-center justify-center mr-4 mt-1">
+                                <span class="text-white font-bold text-sm">1</span>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-slate-900 mb-1">Information Review</h3>
+                                <p class="text-slate-600 text-sm">Our team will review your submitted information and may contact you for any clarifications within 2-4 hours.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 bg-brand-blue rounded-full flex items-center justify-center mr-4 mt-1">
+                                <span class="text-white font-bold text-sm">2</span>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-slate-900 mb-1">Resume Creation</h3>
+                                <p class="text-slate-600 text-sm">Our AI will create the initial draft, then our expert writers will refine and perfect your resume.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 bg-brand-blue rounded-full flex items-center justify-center mr-4 mt-1">
+                                <span class="text-white font-bold text-sm">3</span>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-slate-900 mb-1">First Draft Delivery</h3>
+                                <p class="text-slate-600 text-sm">You'll receive your first draft within 24-48 hours via email for review and feedback.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 bg-brand-blue rounded-full flex items-center justify-center mr-4 mt-1">
+                                <span class="text-white font-bold text-sm">4</span>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-slate-900 mb-1">Final Delivery</h3>
+                                <p class="text-slate-600 text-sm">After incorporating your feedback, you'll receive the final resume in Word & PDF formats.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="bg-white py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-slate-900 text-center mb-12">Expected Timeline</h2>
+            
+            <div class="relative">
+                <!-- Timeline line -->
+                <div class="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gray-200"></div>
+                
+                <div class="space-y-12">
+                    <!-- Now -->
+                    <div class="relative flex items-center">
+                        <div class="flex-1 text-right pr-8">
+                            <h3 class="text-lg font-semibold text-slate-900">Order Placed</h3>
+                            <p class="text-slate-600">Your order has been confirmed and payment processed</p>
+                        </div>
+                        <div class="w-4 h-4 bg-green-500 rounded-full border-4 border-white shadow-lg z-10"></div>
+                        <div class="flex-1 pl-8">
+                            <span class="text-sm font-semibold text-green-600">Completed</span>
+                        </div>
+                    </div>
+                    
+                    <!-- 2-4 hours -->
+                    <div class="relative flex items-center">
+                        <div class="flex-1 text-right pr-8">
+                            <span class="text-sm font-semibold text-brand-blue">In 2-4 hours</span>
+                        </div>
+                        <div class="w-4 h-4 bg-brand-blue rounded-full border-4 border-white shadow-lg z-10"></div>
+                        <div class="flex-1 pl-8">
+                            <h3 class="text-lg font-semibold text-slate-900">Information Review</h3>
+                            <p class="text-slate-600">Our team reviews your details and may contact you</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 24-48 hours -->
+                    <div class="relative flex items-center">
+                        <div class="flex-1 text-right pr-8">
+                            <h3 class="text-lg font-semibold text-slate-900">First Draft Ready</h3>
+                            <p class="text-slate-600">Your resume draft will be sent for review</p>
+                        </div>
+                        <div class="w-4 h-4 bg-gray-300 rounded-full border-4 border-white shadow-lg z-10"></div>
+                        <div class="flex-1 pl-8">
+                            <span class="text-sm font-semibold text-slate-500">In 24-48 hours</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Final -->
+                    <div class="relative flex items-center">
+                        <div class="flex-1 text-right pr-8">
+                            <span class="text-sm font-semibold text-slate-500">After your feedback</span>
+                        </div>
+                        <div class="w-4 h-4 bg-gray-300 rounded-full border-4 border-white shadow-lg z-10"></div>
+                        <div class="flex-1 pl-8">
+                            <h3 class="text-lg font-semibold text-slate-900">Final Delivery</h3>
+                            <p class="text-slate-600">Polished resume in Word & PDF formats</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Support -->
+    <section class="bg-section-bg py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Track Order -->
+                <div class="bg-white rounded-xl shadow-sm p-8 text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="search" class="w-8 h-8 text-brand-blue"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-900 mb-3">Track Your Order</h3>
+                    <p class="text-slate-600 mb-6">Get real-time updates on your resume progress and communicate with your writer.</p>
+                    <button class="bg-brand-blue hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors" onclick="window.location.href='order-tracking.html'">
+                        Track Order
+                    </button>
+                </div>
+
+                <!-- Contact Support -->
+                <div class="bg-white rounded-xl shadow-sm p-8 text-center">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="headphones" class="w-8 h-8 text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-900 mb-3">Need Help?</h3>
+                    <p class="text-slate-600 mb-6">Our support team is available 24/7 to assist you with any questions or concerns.</p>
+                    <div class="space-y-3">
+                        <a href="tel:+919876543210" class="block bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors">
+                            <i data-lucide="phone" class="w-4 h-4 inline mr-2"></i>
+                            Call Support
+                        </a>
+                        <a href="mailto:hello@hirevom.com" class="block border-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-white px-6 py-3 rounded-lg font-semibold transition-colors">
+                            <i data-lucide="mail" class="w-4 h-4 inline mr-2"></i>
+                            Email Support
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial -->
+    <section class="bg-white py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-slate-900 mb-8">What Our Clients Say</h2>
+            <div class="bg-section-bg p-8 rounded-xl">
+                <div class="flex items-center justify-center mb-4">
+                    <div class="flex text-yellow-400">
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                    </div>
+                </div>
+                <blockquote class="text-xl text-slate-700 italic mb-6">
+                    "Hirevom completely transformed my resume! The AI + human combination created something I never could have written myself. Got 4 interview calls in the first week!"
+                </blockquote>
+                <div class="flex items-center justify-center">
+                    <img src="https://placehold.co/60x60" alt="Priya Sharma" class="w-15 h-15 rounded-full mr-4">
+                    <div class="text-left">
+                        <h4 class="font-semibold text-slate-900">Priya Sharma</h4>
+                        <p class="text-slate-600">Software Engineer, Bangalore</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-section-bg py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <h3 class="text-2xl font-bold text-brand-blue mb-4">Hirevom</h3>
+                    <p class="text-slate-600 mb-4">Professional resume writing services powered by AI and refined by experts. Helping job seekers in India and Gulf countries land their dream jobs with winning resumes.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-brand-blue rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-colors">
+                            <i data-lucide="message-circle" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-brand-blue rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-colors">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-brand-blue rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-colors">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-brand-blue rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-colors">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-slate-900 mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html#home" class="text-slate-600 hover:text-brand-blue transition-colors">Home</a></li>
+                        <li><a href="services-detail.html" class="text-slate-600 hover:text-brand-blue transition-colors">Services</a></li>
+                        <li><a href="index.html#how-it-works" class="text-slate-600 hover:text-brand-blue transition-colors">How It Works</a></li>
+                        <li><a href="blog-listing.html" class="text-slate-600 hover:text-brand-blue transition-colors">Blog</a></li>
+                        <li><a href="index.html#faq" class="text-slate-600 hover:text-brand-blue transition-colors">FAQ</a></li>
+                        <li><a href="index.html#contact" class="text-slate-600 hover:text-brand-blue transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-slate-900 mb-4">Contact Info</h4>
+                    <ul class="space-y-2 text-slate-600">
+                        <li class="flex items-center">
+                            <i data-lucide="mail" class="w-4 h-4 mr-2"></i>
+                            <span>hello@hirevom.com</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="phone" class="w-4 h-4 mr-2"></i>
+                            <span>+91 98765 43210</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="map-pin" class="w-4 h-4 mr-2"></i>
+                            <span>India & Gulf Countries</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 mt-8 pt-8 text-center">
+                <p class="text-slate-500">&copy; 2024 Hirevom. All rights reserved. | <a href="#" class="text-brand-blue hover:text-blue-700">Privacy Policy</a> | <a href="#" class="text-brand-blue hover:text-blue-700">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Set current date
+        document.getElementById('order-date').textContent = new Date().toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+
+        // Clear localStorage
+        localStorage.removeItem('selectedPackage');
+    </script>
+</body>
+</html>

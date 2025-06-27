@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>50 Most Common Interview Questions & How to Answer Them | Hirevom Blog</title>
+    <meta name="description" content="Comprehensive guide to the most frequently asked interview questions with sample answers and expert tips for job seekers in India and Gulf countries.">
+    <meta name="keywords" content="interview questions, job interview tips, interview preparation, common interview questions, interview answers">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-blue': '#1D4ED8',
+                        'brand-blue-light': '#3B82F6',
+                        'section-bg': '#F8FAFC'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .prose h2 { @apply text-2xl font-bold text-slate-900 mt-8 mb-4; }
+        .prose h3 { @apply text-xl font-semibold text-slate-900 mt-6 mb-3; }
+        .prose h4 { @apply text-lg font-semibold text-slate-900 mt-4 mb-2; }
+        .prose p { @apply text-slate-700 leading-relaxed mb-4; }
+        .prose ul { @apply list-disc list-inside mb-4 space-y-2; }
+        .prose ol { @apply list-decimal list-inside mb-4 space-y-2; }
+        .prose li { @apply text-slate-700; }
+        .prose blockquote { @apply border-l-4 border-brand-blue bg-blue-50 p-4 italic my-6; }
+        .prose code { @apply bg-gray-100 px-2 py-1 rounded text-sm font-mono; }
+        .prose strong { @apply font-semibold text-slate-900; }
+        .question-card { @apply bg-gradient-to-r from-blue-50 to-indigo-50 border-l-4 border-brand-blue p-6 mb-6 rounded-r-lg; }
+        .answer-card { @apply bg-green-50 border-l-4 border-green-500 p-4 mb-4 rounded-r-lg; }
+        .tip-card { @apply bg-yellow-50 border-l-4 border-yellow-500 p-4 mb-4 rounded-r-lg; }
+    </style>
+</head>
+<body class="bg-white text-slate-700">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-2xl font-bold text-brand-blue">Hirevom</a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html#home" class="text-slate-600 hover:text-brand-blue transition-colors">Home</a>
+                    <a href="index.html#services" class="text-slate-600 hover:text-brand-blue transition-colors">Services</a>
+                    <a href="index.html#how-it-works" class="text-slate-600 hover:text-brand-blue transition-colors">How It Works</a>
+                    <a href="blog.html" class="text-brand-blue font-semibold">Blog</a>
+                    <a href="index.html#faq" class="text-slate-600 hover:text-brand-blue transition-colors">FAQ</a>
+                    <a href="index.html#contact" class="text-slate-600 hover:text-brand-blue transition-colors">Contact</a>
+                </div>
+                <button class="md:hidden" onclick="toggleMobileMenu()">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <section class="bg-section-bg py-4">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <nav class="flex items-center space-x-2 text-sm">
+                <a href="index.html" class="text-slate-500 hover:text-brand-blue transition-colors">Home</a>
+                <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i>
+                <a href="blog.html" class="text-slate-500 hover:text-brand-blue transition-colors">Blog</a>
+                <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i>
+                <span class="text-slate-900">Interview Prep</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Article Header -->
+    <section class="bg-white py-12">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <div class="flex items-center justify-center mb-4">
+                    <span class="bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-semibold">Interview Prep</span>
+                    <span class="text-slate-500 text-sm ml-4">10 min read</span>
+                </div>
+                <h1 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4 leading-tight">
+                    50 Most Common Interview Questions & How to Answer Them
+                </h1>
+                <p class="text-xl text-slate-600 mb-6">
+                    Comprehensive guide to the most frequently asked interview questions with sample answers and expert tips for success.
+                </p>
+                <div class="flex items-center justify-center space-x-6 text-sm text-slate-500">
+                    <div class="flex items-center">
+                        <img src="https://placehold.co/40x40" alt="Ahmed Al-Zahra" class="w-10 h-10 rounded-full mr-3">
+                        <div class="text-left">
+                            <p class="font-semibold text-slate-900">Ahmed Al-Zahra</p>
+                            <p>Career Coach & Interview Expert</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center">
+                        <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
+                        <span>December 10, 2024</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i data-lucide="eye" class="w-4 h-4 mr-2"></i>
+                        <span>4,521 views</span>
+                    </div>
+                </div>
+            </div>
+            <div class="relative">
+                <img src="https://placehold.co/800x400" alt="Job Interview Preparation" class="w-full h-64 lg:h-80 object-cover rounded-lg shadow-lg">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-lg"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Article Content -->
+    <section class="bg-white py-8">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-4 gap-8">
+                <!-- Table of Contents -->
+                <div class="lg:col-span-1">
+                    <div class="sticky top-24">
+                        <div class="bg-section-bg p-6 rounded-lg">
+                            <h3 class="font-semibold text-slate-900 mb-4">Table of Contents</h3>
+                            <nav class="table-of-contents space-y-2 text-sm">
+                                <a href="#introduction" class="block hover:text-brand-blue transition-colors">Introduction</a>
+                                <a href="#general-questions" class="block hover:text-brand-blue transition-colors">General Questions</a>
+                                <a href="#experience-questions" class="block hover:text-brand-blue transition-colors">Experience & Background</a>
+                                <a href="#behavioral-questions" class="block hover:text-brand-blue transition-colors">Behavioral Questions</a>
+                                <a href="#technical-questions" class="block hover:text-brand-blue transition-colors">Technical Questions</a>
+                                <a href="#company-questions" class="block hover:text-brand-blue transition-colors">Company-Specific</a>
+                                <a href="#closing-questions" class="block hover:text-brand-blue transition-colors">Closing Questions</a>
+                                <a href="#tips" class="block hover:text-brand-blue transition-colors">Expert Tips</a>
+                            </nav>
+                        </div>
+                        
+                        <!-- Social Share -->
+                        <div class="bg-section-bg p-6 rounded-lg mt-6">
+                            <h3 class="font-semibold text-slate-900 mb-4">Share This Guide</h3>
+                            <div class="flex space-x-3">
+                                <button class="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
+                                    <i data-lucide="facebook" class="w-5 h-5"></i>
+                                </button>
+                                <button class="w-10 h-10 bg-blue-400 text-white rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors">
+                                    <i data-lucide="twitter" class="w-5 h-5"></i>
+                                </button>
+                                <button class="w-10 h-10 bg-blue-700 text-white rounded-full flex items-center justify-center hover:bg-blue-800 transition-colors">
+                                    <i data-lucide="linkedin" class="w-5 h-5"></i>
+                                </button>
+                                <button class="w-10 h-10 bg-green-600 text-white rounded-full flex items-center justify-center hover:bg-green-700 transition-colors">
+                                    <i data-lucide="message-circle" class="w-5 h-5"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Content -->
+                <div class="lg:col-span-3">
+                    <article class="prose max-w-none">
+                        <div id="introduction">
+                            <p class="text-lg text-slate-600 mb-6 font-medium">
+                                Job interviews can be nerve-wracking, but preparation is your best defense against anxiety and uncertainty. This comprehensive guide covers the 50 most commonly asked interview questions across industries, with expert-crafted answers and tips specifically tailored for job seekers in India and Gulf countries.
+                            </p>
+                            <blockquote>
+                                <p><strong>Pro Tip:</strong> The key to interview success isn't memorizing perfect answers—it's understanding the intent behind each question and crafting authentic responses that showcase your unique value.</p>
+                            </blockquote>
+                        </div>
+
+                        <div id="general-questions">
+                            <h2>General Interview Questions</h2>
+                            <p>These foundational questions appear in almost every interview. They're designed to break the ice and get a general sense of who you are as a candidate.</p>
+
+                            <div class="question-card">
+                                <h4 class="font-bold text-slate-900 mb-2">1. "Tell me about yourself."</h4>
+                                <p class="text-sm text-slate-600 mb-3"><strong>What they're really asking:</strong> Can you summarize your professional background concisely and relevantly?</p>
+                            </div>
+                            <div class="answer-card">
+                                <h5 class="font-semibold text-green-800 mb-2">Sample Answer:</h5>
+                                <p class="text-sm">"I'm a software engineer with 5 years of experience developing web applications using Java and React. I started my career at TCS in Bangalore, where I worked on e-commerce platforms serving millions of users. Currently, I'm a senior developer at a fintech startup, where I've led the development of our mobile banking app that has achieved 4.5-star ratings. I'm passionate about creating user-friendly solutions and am particularly interested in this role because of your company's focus on innovative financial technology."</p>
+                            </div>
+                            <div class="tip-card">
+                                <p class="text-sm"><strong>💡 Tip:</strong> Use the Present-Past-Future formula: Current role → Relevant experience → Why you're interested in this position.</p>
+                            </div>
+
+                            <div class="question-card">
+                                <h4 class="font-bold text-slate-900 mb-2">2. "Why do you want to work here?"</h4>
+                                <p class="text-sm text-slate-600 mb-3"><strong>What they're really asking:</strong> Have you researched our company, and are you genuinely interested?</p>
+                            </div>
+                            <div class="answer-card">
+                                <h5 class="font-semibold text-green-800 mb-2">Sample Answer:</h5>
+                                <p class="text-sm">"I've been following your company's growth in the Middle East market, and I'm impressed by your commitment to sustainable technology solutions. Your recent partnership with local governments to implement smart city initiatives aligns perfectly with my passion for technology that creates positive social impact. Additionally, your reputation for investing in employee development and the collaborative culture I've heard about from current employees makes this an ideal place for me to grow my career while contributing to meaningful projects."</p>
+                            </div>
+
+                            <div class="question-card">
+                                <h4 class="font-bold text-slate-900 mb-2">3. "What are your greatest strengths?"</h4>
+                                <p class="text-sm text-slate-600 mb-3"><strong>What they're really asking:</strong> What value will you bring to our team?</p>
+                            </div>
+                            <div class="answer-card">
+                                <h5 class="font-semibold text-green-800 mb-2">Sample Answer:</h5>
+                                <p class="text-sm">"My greatest strength is my ability to bridge technical and business requirements. In my previous role, I worked closely with both the development team and business stakeholders to translate complex technical concepts into actionable business solutions. This skill helped reduce project delivery time by 30% and improved client satisfaction scores. I also pride myself on being a collaborative team player who can adapt quickly to new technologies and methodologies."</p>
+                            </div>
+
+                            <div class="question-card">
+                                <h4 class="font-bold text-slate-900 mb-2">4. "What is your biggest weakness?"</h4>
+                                <p class="text-sm text-slate-600 mb-3"><strong>What they're really asking:</strong> Are you self-aware and actively working on self-improvement?</p>
+                            </div>
+                            <div class="answer-card">
+                                <h5 class="font-semibold text-green-800 mb-2">Sample Answer:</h5>
+                                <p class="text-sm">"I used to struggle with delegating tasks because I wanted to ensure everything was done perfectly. However, I realized this was limiting both my team's growth and my own effectiveness as a leader. Over the past year, I've been working on this by implementing clear communication protocols and regular check-ins, which has allowed me to delegate more effectively while maintaining quality standards. This has actually improved our team's overall productivity and given team members more opportunities to develop their skills."</p>
+                            </div>
+                            <div class="tip-card">
+                                <p class="text-sm"><strong>💡 Tip:</strong> Choose a real weakness that won't disqualify you, explain how you're addressing it, and show the positive results of your efforts.</p>
+                            </div>
+
+                            <div class="question-card">
+                                <h4 class="font-bold text-slate-900 mb-2">5. "Where do you see yourself in 5 years?"</h4>
+                                <p class="text-sm text-slate-600 mb-3"><strong>What they're really asking:</strong> Are your career goals aligned with what we can offer?</p>
+                            </div>
+                            <div class="answer-card">
+                                <h5 class="font-semibold text-green-800 mb-2">Sample Answer:</h5>
+                                <p class="text-sm">"In five years, I see myself having grown into a technical leadership role where I can mentor junior developers while still being hands-on with cutting-edge projects. I'd like to have contributed to several successful product launches and perhaps have led a cross-functional team on a major initiative. I'm also interested in expanding my expertise in emerging technologies like AI and machine learning. I believe this role would provide the perfect foundation for that growth path, especially given your company's investment in innovation and employee development."</p>
+                            </div>
+                        </div>
+
+                        <div id="experience-questions">
+                            <h2>Experience & Background Questions</h2>
+                            <p>These questions dive deeper into your professional history and achievements.</p>
+
+                            <div class="question-card">
+                                <h4 class="font-bold text-slate-900 mb-2">6. "Walk me through your resume."</h4>
+                            </div>
+                            <div class="answer-card">
+                                <h5 class="font-semibold text-green-800 mb-2">Sample Answer:</h5>
+                                <p class="text-sm">"I started my career as a junior analyst at Infosys, where I spent two years learning the fundamentals of data analysis and client management. I then moved to Wipro as a business analyst, where I specialized in financial services projects for three years. This experience taught me how to translate complex business requirements into technical solutions. Most recently, I've been working as a senior business analyst at a Dubai-based consultancy, where I've led digital transformation projects for regional banks. Each role has built upon the previous one, and now I'm ready to take on more strategic responsibilities, which is why I'm excited about this senior consultant position."</p>
+                            </div>
+
+                            <div class="question-card">
+                                <h4 class="font-bold text-slate-900 mb-2">7. "What was your biggest professional achievement?"</h4>
+                            </div>
+                            <div class="answer-card">
+                                <h5 class="font-semibold text-green-800 mb-2">Sample Answer:</h5>
+                                <p class="text-sm">"My biggest achievement was leading the implementation of a new customer relationship management system at my previous company. The project involved coordinating with multiple departments, training over 200 employees, and ensuring zero downtime during the transition. Despite initial resistance to change, I developed a comprehensive change management strategy that included hands-on training sessions and ongoing support. The result was a 40% improvement in customer response time and a 25% increase in customer satisfaction scores. The project was completed on time and 15% under budget, and it became a template for future system implementations across the organization."</p>
+                            </div>
+
+                            <div class="question-card">
+                                <h4 class="font-bold text-slate-900 mb-2">8. "Describe a challenging project you worked on."</h4>
+                            </div>
+                            <div class="answer-card">
+                                <h5 class="font-semibold text-green-800 mb-2">Sample Answer:</h5>
+                                <p class="text-sm">"I was tasked with launching a new product line in the UAE market within a very tight six-month deadline. The challenge was that we had limited market research and faced strong competition from established players. I started by conducting rapid market analysis, including customer interviews and competitor research. I then worked with cross-functional teams to adapt our product for local preferences and regulatory requirements. The biggest hurdle was when our initial marketing strategy wasn't resonating with the target audience. I quickly pivoted, partnering with local influencers and adjusting our messaging. Despite the challenges, we launched on time and exceeded our first-quarter sales targets by 20%."</p>
+                            </div>
+                        </div>
+
+                        <div id="behavioral-questions">
+                            <h2>Behavioral Interview Questions</h2>
+                            <p>These questions use the STAR method (Situation, Task, Action, Result) to assess how you've handled specific situations.</p>
+
+                            <div class="question-card">
+                                <h4 class="font-bold text-slate-900 mb-2">9. "Tell me about a time you had to work with a difficult team member."</h4>
+                            </div>
+                            <div class="answer-card">
+                                <h5 class="font-semibold text-green-800 mb-2">STAR Method Answer:</h5>
+                                <p class="text-sm"><strong>Situation:</strong> I was working on a critical project with a team member who consistently missed deadlines and was unresponsive to team communications.</p>
+                                <p class="text-sm"><strong>Task:</strong> As the project lead, I needed to address this issue without creating conflict while ensuring project success.</p>
+                                <p class="text-sm"><strong>Action:</strong> I scheduled a private one-on-one meeting to understand their perspective. I discovered they were overwhelmed with multiple projects and unclear about priorities. I worked with them to reorganize their workload and established clear communication protocols with regular check-ins.</p>
+                                <p class="text-sm"><strong>Result:</strong> Their performance improved significantly, and we delivered the project on time. They later thanked me for the support, and we developed a strong working relationship.</p>
+                            </div>
+
+                            <div class="question-card">
+                                <h4 class="font-bold text-slate-900 mb-2">10. "Describe a time when you failed at something."</h4>
+                            </div>
+                            <div class="answer-card">
+                                <h5 class="font-semibold text-green-800 mb-2">Sample Answer:</h5>
+                                <p class="text-sm">"Early in my career, I was leading a software implementation project and became overconfident in my technical abilities. I didn't adequately involve the end-users in the testing phase, assuming the solution would meet their needs. When we launched, we discovered several usability issues that significantly impacted productivity. I had to quickly organize additional training sessions and work overtime to implement fixes. This experience taught me the critical importance of user involvement throughout the development process. Since then, I always ensure comprehensive user testing and feedback loops in every project I lead."</p>
+                            </div>
+                        </div>
+
+                        <div id="technical-questions">
+                            <h2>Technical & Role-Specific Questions</h2>
+                            <p>These vary by industry and position but generally assess your technical competency and problem-solving abilities.</p>
+
+                            <div class="question-card">
+                                <h4 class="font-bold text-slate-900 mb-2">11. "How do you stay updated with industry trends?"</h4>
+                            </div>
+                            <div class="answer-card">
+                                <h5 class="font-semibold text-green-800 mb-2">Sample Answer:</h5>
+                                <p class="text-sm">"I maintain a structured approach to staying current with industry developments. I subscribe to key publications like Harvard Business Review and industry-specific journals. I'm active in professional communities on LinkedIn and participate in local meetups and conferences. I also dedicate time each week to online learning platforms like Coursera and have completed several certifications in the past year. Additionally, I follow thought leaders on social media and regularly engage in discussions with peers in my network. This multi-faceted approach ensures I'm aware of both emerging trends and practical applications in our field."</p>
+                            </div>
+
+                            <div class="question-card">
+                                <h4 class="font-bold text-slate-900 mb-2">12. "How would you approach solving a problem you've never encountered before?"</h4>
+                            </div>
+                            <div class="answer-card">
+                                <h5 class="font-semibold text-green-800 mb-2">Sample Answer:</h5>
+                                <p class="text-sm">"I follow a systematic approach: First, I break down the problem into smaller, manageable components to understand its scope. Then I research similar challenges and solutions, consulting documentation, online resources, and reaching out to colleagues or industry experts. I like to brainstorm multiple potential solutions before selecting the most viable approach. I also believe in testing solutions on a small scale when possible before full implementation. Throughout the process, I document my findings and approach so that the knowledge can be shared with the team for future reference."</p>
+                            </div>
+                        </div>
+
+                        <div id="company-questions">
+                            <h2>Company-Specific Questions</h2>
+                            <p>These questions test your knowledge about the company and role.</p>
+
+                            <div class="question-card">
+                                <h4 class="font-bold text-slate-900 mb-2">13. "What do you know about our company?"</h4>
+                            </div>
+                            <div class="answer-card">
+                                <h5 class="font-semibold text-green-800 mb-2">Research-Based Answer:</h5>
+                                <p class="text-sm">"I've researched your company extensively and I'm impressed by your rapid growth in the regional market over the past five years. Your commitment to sustainability, as evidenced by your recent carbon-neutral initiative, aligns with my personal values. I'm particularly interested in your expansion into fintech solutions and how you're leveraging AI to improve customer experience. I also noticed your recent partnership with local universities for talent development, which shows your investment in the community. Your company culture of innovation and collaboration, as described by current employees on LinkedIn, is exactly the environment where I believe I can contribute most effectively."</p>
+                            </div>
+
+                            <div class="question-card">
+                                <h4 class="font-bold text-slate-900 mb-2">14. "Why are you leaving your current job?"</h4>
+                            </div>
+                            <div class="answer-card">
+                                <h5 class="font-semibold text-green-800 mb-2">Sample Answer:</h5>
+                                <p class="text-sm">"I've really enjoyed my current role and have learned a great deal, but I'm looking for new challenges that will allow me to grow professionally. While my current company is excellent, the opportunities for advancement in my specific area are limited due to the company's size and structure. I'm seeking a role where I can take on more strategic responsibilities and work with cutting-edge technologies. Your company's reputation for innovation and the scope of this position offer exactly the kind of growth opportunity I'm looking for."</p>
+                            </div>
+                            <div class="tip-card">
+                                <p class="text-sm"><strong>💡 Tip:</strong> Always frame your reason positively. Focus on what you want to gain, not what you want to escape.</p>
+                            </div>
+
+                            <div class="question-card">
+                                <h4 class="font-bold text-slate-900 mb-2">15. "What interests you most about this role?"</h4>
+                            </div>
+                            <div class="answer-card">
+                                <h5 class="font-semibold text-green-800 mb-2">Sample Answer:</h5>
+                                <p class="text-sm">"What excites me most is the opportunity to lead digital transformation initiatives across multiple markets. The scope of this role would allow me to combine my technical background with my business acumen to drive meaningful change. I'm particularly interested in the cross-cultural aspect of working with teams across India and the Gulf region, as I believe diverse perspectives lead to better solutions. The chance to work with emerging technologies while solving real business problems is exactly the kind of challenge I'm looking for at this stage of my career."</p>
+                            </div>
+                        </div>
+
+                        <div id="closing-questions">
+                            <h2>Closing Questions</h2>
+                            <p>These questions typically come at the end of the interview and are your opportunity to demonstrate continued interest.</p>
+
+                            <div class="question-card">
+                                <h4 class="font-bold text-slate-900 mb-2">16. "Do you have any questions for us?"</h4>
+                                <p class="text-sm text-slate-600 mb-3"><strong>What they're really asking:</strong> Are you genuinely interested and have you thought deeply about this role?</p>
+                            </div>
+                            <div class="answer-card">
+                                <h5 class="font-semibold text-green-800 mb-2">Great Questions to Ask:</h5>
+                                <ul class="text-sm space-y-1">
+                                    <li>• "What does success look like in this role after the first 90 days?"</li>
+                                    <li>• "What are the biggest challenges facing the team right now?"</li>
+                                    <li>• "How does this role contribute to the company's strategic objectives?"</li>
+                                    <li>• "What opportunities are there for professional development?"</li>
+                                    <li>• "Can you tell me about the team culture and collaboration style?"</li>
+                                    <li>• "What do you enjoy most about working here?"</li>
+                                </ul>
+                            </div>
+                            <div class="tip-card">
+                                <p class="text-sm"><strong>💡 Tip:</strong> Never say "No, I don't have any questions." Always prepare 3-5 thoughtful questions in advance.</p>
+                            </div>
+
+                            <div class="question-card">
+                                <h4 class="font-bold text-slate-900 mb-2">17. "What are your salary expectations?"</h4>
+                            </div>
+                            <div class="answer-card">
+                                <h5 class="font-semibold text-green-800 mb-2">Sample Answer:</h5>
+                                <p class="text-sm">"I'm looking for a compensation package that's competitive with the market rate for this role and reflects my experience and the value I can bring to the organization. Based on my research and understanding of the position's responsibilities, I believe the range would be between X and Y. However, I'm open to discussing the complete compensation package, including benefits and growth opportunities, as these are also important factors for me."</p>
+                            </div>
+                            <div class="tip-card">
+                                <p class="text-sm"><strong>💡 Tip:</strong> Research salary ranges beforehand using sites like Glassdoor, PayScale, or local salary surveys. Give a range rather than a specific number.</p>
+                            </div>
+                        </div>
+
+                        <div id="tips">
+                            <h2>Expert Interview Tips</h2>
+                            
+                            <h3>Before the Interview</h3>
+                            <ul>
+                                <li><strong>Research thoroughly:</strong> Company background, recent news, industry trends, and the interviewer's LinkedIn profile</li>
+                                <li><strong>Practice your stories:</strong> Prepare 5-7 specific examples using the STAR method</li>
+                                <li><strong>Prepare questions:</strong> Have thoughtful questions ready that show genuine interest</li>
+                                <li><strong>Plan your route:</strong> Know exactly how to get there and arrive 10-15 minutes early</li>
+                                <li><strong>Prepare your materials:</strong> Multiple copies of your resume, portfolio, and references</li>
+                            </ul>
+
+                            <h3>During the Interview</h3>
+                            <ul>
+                                <li><strong>Make a strong first impression:</strong> Firm handshake, eye contact, and confident posture</li>
+                                <li><strong>Listen actively:</strong> Pay attention to the full question before answering</li>
+                                <li><strong>Be specific:</strong> Use concrete examples and quantify your achievements</li>
+                                <li><strong>Show enthusiasm:</strong> Let your genuine interest in the role come through</li>
+                                <li><strong>Ask for clarification:</strong> If you don't understand a question, it's okay to ask for clarification</li>
+                            </ul>
+
+                            <h3>After the Interview</h3>
+                            <ul>
+                                <li><strong>Send a thank-you note:</strong> Within 24 hours, personalized to each interviewer</li>
+                                <li><strong>Follow up appropriately:</strong> If they said they'd get back to you in a week, wait a week plus 2-3 days</li>
+                                <li><strong>Reflect and learn:</strong> Note what went well and what you could improve for next time</li>
+                                <li><strong>Stay positive:</strong> Regardless of the outcome, each interview is valuable experience</li>
+                            </ul>
+
+                            <blockquote>
+                                <p><strong>Remember:</strong> The interview is a two-way conversation. While they're evaluating you, you should also be assessing whether this company and role are the right fit for your career goals.</p>
+                            </blockquote>
+                        </div>
+
+                        <!-- Call to Action -->
+                        <div class="bg-gradient-to-r from-green-500 to-green-600 rounded-lg p-8 text-white mt-12">
+                            <div class="text-center">
+                                <h3 class="text-2xl font-bold mb-4">Ready to Land Your Next Interview?</h3>
+                                <p class="text-green-100 mb-6">A professionally written resume is your first step to getting more interview opportunities. Our expert writers create resumes that get noticed by recruiters and hiring managers.</p>
+                                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                                    <button class="bg-white text-green-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-colors">
+                                        Get Your Resume Written
+                                    </button>
+                                    <button class="border-2 border-white text-white hover:bg-white hover:text-green-600 px-8 py-3 rounded-lg font-semibold transition-colors">
+                                        View Resume Samples
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Articles -->
+    <section class="bg-section-bg py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">Related Interview Guides</h2>
+                <p class="text-xl text-slate-600">Master every aspect of the interview process</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <article class="bg-white rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+                    <img src="https://placehold.co/350x200" alt="Interview Body Language" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-semibold">Interview Prep</span>
+                            <span class="text-slate-500 text-sm ml-3">6 min read</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 hover:text-brand-blue transition-colors cursor-pointer">
+                            Body Language Tips That Win Interviews
+                        </h3>
+                        <p class="text-slate-600 mb-4">Master non-verbal communication to make a powerful first impression and build rapport with interviewers.</p>
+                        <a href="#" class="text-brand-blue font-semibold hover:text-blue-700 transition-colors">Read More →</a>
+                    </div>
+                </article>
+
+                <article class="bg-white rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+                    <img src="https://placehold.co/350x200" alt="Virtual Interview Tips" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-semibold">Interview Prep</span>
+                            <span class="text-slate-500 text-sm ml-3">8 min read</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 hover:text-brand-blue transition-colors cursor-pointer">
+                            Virtual Interview Success Guide
+                        </h3>
+                        <p class="text-slate-600 mb-4">Essential tips for video interviews including technical setup, lighting, and virtual etiquette.</p>
+                        <a href="#" class="text-brand-blue font-semibold hover:text-blue-700 transition-colors">Read More →</a>
+                    </div>
+                </article>
+
+                <article class="bg-white rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+                    <img src="https://placehold.co/350x200" alt="Salary Negotiation" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm font-semibold">Career Advice</span>
+                            <span class="text-slate-500 text-sm ml-3">12 min read</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 hover:text-brand-blue transition-colors cursor-pointer">
+                            Salary Negotiation Strategies That Work
+                        </h3>
+                        <p class="text-slate-600 mb-4">Learn how to negotiate your salary effectively and secure the compensation you deserve.</p>
+                        <a href="#" class="text-brand-blue font-semibold hover:text-blue-700 transition-colors">Read More →</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Signup -->
+    <section class="bg-white py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-r from-slate-50 to-blue-50 rounded-2xl p-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-brand-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="mail" class="w-8 h-8 text-brand-blue"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Get More Interview Tips</h3>
+                    <p class="text-slate-600 mb-6">Subscribe to receive expert interview strategies, resume tips, and career insights delivered weekly.</p>
+                    <div class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                        <input type="email" placeholder="Enter your email address" class="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent">
+                        <button class="bg-brand-blue hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors whitespace-nowrap">
+                            Subscribe Now
+                        </button>
+                    </div>
+                    <p class="text-sm text-slate-500 mt-3">Join 15,000+ job seekers. No spam, unsubscribe anytime.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-section-bg py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <h3 class="text-2xl font-bold text-brand-blue mb-4">Hirevom</h3>
+                    <p class="text-slate-600 mb-4">Professional resume writing services powered by AI and refined by experts. Helping job seekers in India and Gulf countries land their dream jobs with winning resumes.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-brand-blue rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-colors">
+                            <i data-lucide="message-circle" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-brand-blue rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-colors">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-brand-blue rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-colors">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-brand-blue rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-colors">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-slate-900 mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html#home" class="text-slate-600 hover:text-brand-blue transition-colors">Home</a></li>
+                        <li><a href="index.html#services" class="text-slate-600 hover:text-brand-blue transition-colors">Services</a></li>
+                        <li><a href="index.html#how-it-works" class="text-slate-600 hover:text-brand-blue transition-colors">How It Works</a></li>
+                        <li><a href="blog.html" class="text-slate-600 hover:text-brand-blue transition-colors">Blog</a></li>
+                        <li><a href="index.html#faq" class="text-slate-600 hover:text-brand-blue transition-colors">FAQ</a></li>
+                        <li><a href="index.html#contact" class="text-slate-600 hover:text-brand-blue transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-slate-900 mb-4">Contact Info</h4>
+                    <ul class="space-y-2 text-slate-600">
+                        <li class="flex items-center">
+                            <i data-lucide="mail" class="w-4 h-4 mr-2"></i>
+                            <span>hello@hirevom.com</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="phone" class="w-4 h-4 mr-2"></i>
+                            <span>+91 98765 43210</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="map-pin" class="w-4 h-4 mr-2"></i>
+                            <span>India & Gulf Countries</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 mt-8 pt-8 text-center">
+                <p class="text-slate-500">&copy; 2024 Hirevom. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        // Smooth scrolling for table of contents
+        document.querySelectorAll('.table-of-contents a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Highlight active section in table of contents
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('[id]');
+            const navLinks = document.querySelectorAll('.table-of-contents a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Social sharing functionality
+        document.querySelectorAll('[data-lucide="facebook"]').forEach(btn => {
+            btn.parentElement.addEventListener('click', () => {
+                const url = encodeURIComponent(window.location.href);
+                const title = encodeURIComponent(document.title);
+                window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank', 'width=600,height=400');
+            });
+        });
+
+        document.querySelectorAll('[data-lucide="twitter"]').forEach(btn => {
+            btn.parentElement.addEventListener('click', () => {
+                const url = encodeURIComponent(window.location.href);
+                const title = encodeURIComponent(document.title);
+                window.open(`https://twitter.com/intent/tweet?url=${url}&text=${title}`, '_blank', 'width=600,height=400');
+            });
+        });
+
+        document.querySelectorAll('[data-lucide="linkedin"]').forEach(btn => {
+            btn.parentElement.addEventListener('click', () => {
+                const url = encodeURIComponent(window.location.href);
+                window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}`, '_blank', 'width=600,height=400');
+            });
+        });
+    </script>
+</body>
+</html>

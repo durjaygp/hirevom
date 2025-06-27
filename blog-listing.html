@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Resources & Blog | Hirevom</title>
+    <meta name="description" content="Expert career advice, resume tips, interview preparation guides, and job search strategies for professionals in India and Gulf countries.">
+    <meta name="keywords" content="career advice, resume tips, interview preparation, job search, career development, professional growth">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-blue': '#1D4ED8',
+                        'brand-blue-light': '#3B82F6',
+                        'section-bg': '#F8FAFC'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .blog-category-btn {
+            @apply px-4 py-2 rounded-full border border-gray-300 text-slate-600 hover:border-brand-blue hover:text-brand-blue transition-colors font-medium;
+        }
+        .blog-category-btn.active {
+            @apply bg-brand-blue text-white border-brand-blue;
+        }
+        .blog-post {
+            transition: transform 0.2s ease;
+        }
+        .blog-post:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-700">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-2xl font-bold text-brand-blue">Hirevom</a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html#home" class="text-slate-600 hover:text-brand-blue transition-colors">Home</a>
+                    <a href="index.html#services" class="text-slate-600 hover:text-brand-blue transition-colors">Services</a>
+                    <a href="index.html#how-it-works" class="text-slate-600 hover:text-brand-blue transition-colors">How It Works</a>
+                    <a href="blog-listing.html" class="text-brand-blue font-semibold">Blog</a>
+                    <a href="index.html#faq" class="text-slate-600 hover:text-brand-blue transition-colors">FAQ</a>
+                    <a href="index.html#contact" class="text-slate-600 hover:text-brand-blue transition-colors">Contact</a>
+                </div>
+                <button class="md:hidden" onclick="toggleMobileMenu()">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Header -->
+    <section class="bg-gradient-to-r from-brand-blue to-brand-blue-light py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl lg:text-5xl font-bold text-white mb-4">Career Resources & Insights</h1>
+            <p class="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">Expert advice, practical tips, and proven strategies to accelerate your career success in India and Gulf countries</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+                <input type="text" placeholder="Search articles..." class="flex-1 px-4 py-3 rounded-lg border-0 focus:outline-none focus:ring-2 focus:ring-white/50">
+                <button class="bg-white text-brand-blue hover:bg-gray-100 px-6 py-3 rounded-lg font-semibold transition-colors">
+                    <i data-lucide="search" class="w-5 h-5"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Categories -->
+    <section class="bg-white py-8 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap justify-center gap-4">
+                <button class="blog-category-btn active" onclick="filterBlogPosts('all')">All Articles</button>
+                <button class="blog-category-btn" onclick="filterBlogPosts('resume-tips')">Resume Tips</button>
+                <button class="blog-category-btn" onclick="filterBlogPosts('interview-prep')">Interview Prep</button>
+                <button class="blog-category-btn" onclick="filterBlogPosts('career-advice')">Career Advice</button>
+                <button class="blog-category-btn" onclick="filterBlogPosts('job-search')">Job Search</button>
+                <button class="blog-category-btn" onclick="filterBlogPosts('industry-insights')">Industry Insights</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Articles -->
+    <section class="bg-section-bg py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">Featured Articles</h2>
+                <p class="text-xl text-slate-600">Our most popular and impactful career guides</p>
+            </div>
+            <div class="grid lg:grid-cols-2 gap-8 mb-16">
+                <article class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                    <img src="https://placehold.co/500x300" alt="Ultimate Resume Guide" class="w-full h-64 object-cover">
+                    <div class="p-8">
+                        <div class="flex items-center mb-4">
+                            <span class="bg-blue-100 text-brand-blue px-3 py-1 rounded-full text-sm font-semibold">Featured</span>
+                            <span class="text-slate-500 text-sm ml-3">15 min read</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4 hover:text-brand-blue transition-colors cursor-pointer">
+                            The Ultimate Resume Guide for 2024: ATS-Optimized Templates & Tips
+                        </h3>
+                        <p class="text-slate-600 mb-6">Complete step-by-step guide covering everything from ATS optimization to industry-specific keywords for India and Gulf job markets. Includes downloadable templates and real examples.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <img src="https://placehold.co/32x32" alt="Sarah Johnson" class="w-8 h-8 rounded-full mr-3">
+                                <span class="text-sm text-slate-600">Sarah Johnson</span>
+                            </div>
+                            <a href="blog-post-template.html" class="text-brand-blue font-semibold hover:text-blue-700 transition-colors">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                    <img src="https://placehold.co/500x300" alt="Interview Questions Guide" class="w-full h-64 object-cover">
+                    <div class="p-8">
+                        <div class="flex items-center mb-4">
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-semibold">Featured</span>
+                            <span class="text-slate-500 text-sm ml-3">10 min read</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4 hover:text-brand-blue transition-colors cursor-pointer">
+                            50 Most Common Interview Questions & Expert Answers
+                        </h3>
+                        <p class="text-slate-600 mb-6">Master the most frequently asked interview questions with our comprehensive guide featuring sample answers, expert tips, and strategies specifically for the Indian and Gulf job markets.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <img src="https://placehold.co/32x32" alt="Ahmed Al-Zahra" class="w-8 h-8 rounded-full mr-3">
+                                <span class="text-sm text-slate-600">Ahmed Al-Zahra</span>
+                            </div>
+                            <a href="interview-prep-blog-post.html" class="text-brand-blue font-semibold hover:text-blue-700 transition-colors">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- All Articles -->
+    <section class="bg-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">Latest Articles</h2>
+                <p class="text-xl text-slate-600">Stay updated with the latest career insights and job market trends</p>
+            </div>
+            
+            <!-- Blog Posts Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="blog-posts-grid">
+                <!-- Resume Tips Articles -->
+                <article class="blog-post bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300" data-category="resume-tips">
+                    <img src="https://placehold.co/350x200" alt="ATS Resume Tips" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="bg-blue-100 text-brand-blue px-3 py-1 rounded-full text-sm font-semibold">Resume Tips</span>
+                            <span class="text-slate-500 text-sm ml-3">5 min read</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 hover:text-brand-blue transition-colors cursor-pointer">
+                            10 ATS-Friendly Resume Tips That Actually Work in 2024
+                        </h3>
+                        <p class="text-slate-600 mb-4">Learn how to optimize your resume for Applicant Tracking Systems used by companies in India and Gulf countries.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <img src="https://placehold.co/32x32" alt="Author" class="w-8 h-8 rounded-full mr-3">
+                                <span class="text-sm text-slate-600">Sarah Johnson</span>
+                            </div>
+                            <span class="text-sm text-slate-500">Dec 15, 2024</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-post bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300" data-category="resume-tips">
+                    <img src="https://placehold.co/350x200" alt="Resume Keywords" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="bg-blue-100 text-brand-blue px-3 py-1 rounded-full text-sm font-semibold">Resume Tips</span>
+                            <span class="text-slate-500 text-sm ml-3">7 min read</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 hover:text-brand-blue transition-colors cursor-pointer">
+                            How to Use Keywords Effectively in Your Resume
+                        </h3>
+                        <p class="text-slate-600 mb-4">Master the art of keyword optimization to get past ATS systems and catch recruiters' attention.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <img src="https://placehold.co/32x32" alt="Author" class="w-8 h-8 rounded-full mr-3">
+                                <span class="text-sm text-slate-600">Raj Patel</span>
+                            </div>
+                            <span class="text-sm text-slate-500">Dec 12, 2024</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-post bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300" data-category="resume-tips">
+                    <img src="https://placehold.co/350x200" alt="Resume Format" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="bg-blue-100 text-brand-blue px-3 py-1 rounded-full text-sm font-semibold">Resume Tips</span>
+                            <span class="text-slate-500 text-sm ml-3">6 min read</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 hover:text-brand-blue transition-colors cursor-pointer">
+                            Choosing the Right Resume Format for Your Industry
+                        </h3>
+                        <p class="text-slate-600 mb-4">Learn which resume format works best for different industries and career levels in India and Gulf countries.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <img src="https://placehold.co/32x32" alt="Author" class="w-8 h-8 rounded-full mr-3">
+                                <span class="text-sm text-slate-600">Priya Sharma</span>
+                            </div>
+                            <span class="text-sm text-slate-500">Dec 10, 2024</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Interview Prep Articles -->
+                <article class="blog-post bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300" data-category="interview-prep">
+                    <img src="https://placehold.co/350x200" alt="Virtual Interview" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-semibold">Interview Prep</span>
+                            <span class="text-slate-500 text-sm ml-3">8 min read</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 hover:text-brand-blue transition-colors cursor-pointer">
+                            Virtual Interview Success: Complete Setup Guide
+                        </h3>
+                        <p class="text-slate-600 mb-4">Master video interviews with our comprehensive guide covering technical setup, lighting, and virtual etiquette.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <img src="https://placehold.co/32x32" alt="Author" class="w-8 h-8 rounded-full mr-3">
+                                <span class="text-sm text-slate-600">Ahmed Al-Zahra</span>
+                            </div>
+                            <span class="text-sm text-slate-500">Dec 8, 2024</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-post bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300" data-category="interview-prep">
+                    <img src="https://placehold.co/350x200" alt="Body Language" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-semibold">Interview Prep</span>
+                            <span class="text-slate-500 text-sm ml-3">6 min read</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 hover:text-brand-blue transition-colors cursor-pointer">
+                            Body Language Tips That Win Interviews
+                        </h3>
+                        <p class="text-slate-600 mb-4">Master non-verbal communication to make a powerful first impression and build rapport with interviewers.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <img src="https://placehold.co/32x32" alt="Author" class="w-8 h-8 rounded-full mr-3">
+                                <span class="text-sm text-slate-600">Michael Chen</span>
+                            </div>
+                            <span class="text-sm text-slate-500">Dec 5, 2024</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Career Advice Articles -->
+                <article class="blog-post bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300" data-category="career-advice">
+                    <img src="https://placehold.co/350x200" alt="Career Change" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm font-semibold">Career Advice</span>
+                            <span class="text-slate-500 text-sm ml-3">12 min read</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 hover:text-brand-blue transition-colors cursor-pointer">
+                            How to Successfully Change Careers in Your 30s
+                        </h3>
+                        <p class="text-slate-600 mb-4">Strategic guide for professionals looking to pivot their careers and transition to new industries.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <img src="https://placehold.co/32x32" alt="Author" class="w-8 h-8 rounded-full mr-3">
+                                <span class="text-sm text-slate-600">Priya Sharma</span>
+                            </div>
+                            <span class="text-sm text-slate-500">Dec 3, 2024</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Job Search Articles -->
+                <article class="blog-post bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300" data-category="job-search">
+                    <img src="https://placehold.co/350x200" alt="LinkedIn Profile" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-sm font-semibold">Job Search</span>
+                            <span class="text-slate-500 text-sm ml-3">9 min read</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 hover:text-brand-blue transition-colors cursor-pointer">
+                            LinkedIn Profile Optimization: Complete 2024 Guide
+                        </h3>
+                        <p class="text-slate-600 mb-4">Transform your LinkedIn profile into a powerful job search tool that attracts recruiters and opportunities.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <img src="https://placehold.co/32x32" alt="Author" class="w-8 h-8 rounded-full mr-3">
+                                <span class="text-sm text-slate-600">Michael Chen</span>
+                            </div>
+                            <span class="text-sm text-slate-500">Dec 1, 2024</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-post bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300" data-category="job-search">
+                    <img src="https://placehold.co/350x200" alt="Networking Tips" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-sm font-semibold">Job Search</span>
+                            <span class="text-slate-500 text-sm ml-3">7 min read</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 hover:text-brand-blue transition-colors cursor-pointer">
+                            Professional Networking Strategies for Introverts
+                        </h3>
+                        <p class="text-slate-600 mb-4">Build meaningful professional relationships and expand your network without feeling overwhelmed or inauthentic.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <img src="https://placehold.co/32x32" alt="Author" class="w-8 h-8 rounded-full mr-3">
+                                <span class="text-sm text-slate-600">Fatima Al-Rashid</span>
+                            </div>
+                            <span class="text-sm text-slate-500">Nov 28, 2024</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Industry Insights Articles -->
+                <article class="blog-post bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300" data-category="industry-insights">
+                    <img src="https://placehold.co/350x200" alt="Gulf Job Market" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-semibold">Industry Insights</span>
+                            <span class="text-slate-500 text-sm ml-3">15 min read</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 hover:text-brand-blue transition-colors cursor-pointer">
+                            Gulf Job Market Trends: What's Hot in 2024
+                        </h3>
+                        <p class="text-slate-600 mb-4">Comprehensive analysis of job market trends, salary expectations, and in-demand skills in Gulf countries.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <img src="https://placehold.co/32x32" alt="Author" class="w-8 h-8 rounded-full mr-3">
+                                <span class="text-sm text-slate-600">Fatima Al-Rashid</span>
+                            </div>
+                            <span class="text-sm text-slate-500">Nov 25, 2024</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="text-center mt-12">
+                <button class="border-2 border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+                    Load More Articles
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Signup -->
+    <section class="bg-section-bg py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-r from-slate-50 to-blue-50 rounded-2xl p-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-brand-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="mail" class="w-8 h-8 text-brand-blue"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Never Miss a Career Tip</h3>
+                    <p class="text-slate-600 mb-6">Get weekly career insights, resume tips, and job market updates delivered straight to your inbox.</p>
+                    <div class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                        <input type="email" placeholder="Enter your email address" class="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent">
+                        <button class="bg-brand-blue hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors whitespace-nowrap">
+                            Subscribe Now
+                        </button>
+                    </div>
+                    <p class="text-sm text-slate-500 mt-3">Join 15,000+ professionals. No spam, unsubscribe anytime.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white py-12 border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <h3 class="text-2xl font-bold text-brand-blue mb-4">Hirevom</h3>
+                    <p class="text-slate-600 mb-4">Professional resume writing services powered by AI and refined by experts. Helping job seekers in India and Gulf countries land their dream jobs with winning resumes.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-brand-blue rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-colors">
+                            <i data-lucide="message-circle" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-brand-blue rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-colors">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-brand-blue rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-colors">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-brand-blue rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-colors">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-slate-900 mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html#home" class="text-slate-600 hover:text-brand-blue transition-colors">Home</a></li>
+                        <li><a href="index.html#services" class="text-slate-600 hover:text-brand-blue transition-colors">Services</a></li>
+                        <li><a href="index.html#how-it-works" class="text-slate-600 hover:text-brand-blue transition-colors">How It Works</a></li>
+                        <li><a href="blog-listing.html" class="text-slate-600 hover:text-brand-blue transition-colors">Blog</a></li>
+                        <li><a href="index.html#faq" class="text-slate-600 hover:text-brand-blue transition-colors">FAQ</a></li>
+                        <li><a href="index.html#contact" class="text-slate-600 hover:text-brand-blue transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-slate-900 mb-4">Contact Info</h4>
+                    <ul class="space-y-2 text-slate-600">
+                        <li class="flex items-center">
+                            <i data-lucide="mail" class="w-4 h-4 mr-2"></i>
+                            <span>hello@hirevom.com</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="phone" class="w-4 h-4 mr-2"></i>
+                            <span>+91 98765 43210</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="map-pin" class="w-4 h-4 mr-2"></i>
+                            <span>India & Gulf Countries</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 mt-8 pt-8 text-center">
+                <p class="text-slate-500">&copy; 2024 Hirevom. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        // Blog category filtering
+        function filterBlogPosts(category) {
+            const posts = document.querySelectorAll('.blog-post');
+            const buttons = document.querySelectorAll('.blog-category-btn');
+            
+            // Update active button
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Filter posts
+            posts.forEach(post => {
+                if (category === 'all' || post.dataset.category === category) {
+                    post.style.display = 'block';
+                    post.style.animation = 'fadeIn 0.5s ease';
+                } else {
+                    post.style.display = 'none';
+                }
+            });
+        }
+
+        // Add fade-in animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
